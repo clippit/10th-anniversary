@@ -219,9 +219,37 @@ td { vertical-align: top; }
    ========================================================================== */
 
 
+header {
+  width: 300px;
+  margin: 0 auto;
+}
 
+nav {
+  position: fixed;
+  top:20px;
+  z-index:99;
+}
 
+#nav li {
+  float:left;
+  padding: 5px;
+}
 
+#nav li.current {
+  border: 1px solid #999;
+}
+
+#content {
+  position: relative;
+  top: 100px;
+}
+
+section {
+  min-height:500px;
+  padding:40px;
+  width: 960px;
+  margin:0 auto;
+}
 
 
 
