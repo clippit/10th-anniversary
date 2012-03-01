@@ -59,14 +59,14 @@ jQuery(document).ready(function () {
   
   /* Google Maps
    ------------------------------------------------------------------------*/
-  jQuery('#gmap').googleMaps({
-    latitude: 52.263301,
-    longitude: 21.028317,
-    markers: {
-      latitude: 52.263301,
-      longitude: 21.028317
-    }
-  });
+  // jQuery('#gmap').googleMaps({
+  //   latitude: 52.263301,
+  //   longitude: 21.028317,
+  //   markers: {
+  //     latitude: 52.263301,
+  //     longitude: 21.028317
+  //   }
+  // });
   
   
   /* Sliders
