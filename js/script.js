@@ -3,10 +3,6 @@
 */
 
 
-(function() {
-	$('#nav').onePageNav({
-		changeHash : true
-	});
-})();
+
 
 
