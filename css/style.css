@@ -803,6 +803,7 @@ ul.tweets li p span {
   padding-top:10px;
   font-size:30px;
   text-align:center;
+  font-weight:bold;
 }
 
 /* Header
@@ -1042,13 +1043,13 @@ ul#menu ul ul { position:absolute; left:100%; top:-1px; width: 100%; z-index:2; 
 .medium-slider .rs-nav { bottom:50px; }
 
 
-/* Latest Works
+/* Announcements
  ------------------------------------------------------------------------*/
-.latest-works {
+.latest {
   position:relative;
-  margin-top:-8px;
+/*  margin-top:-8px;*/
   background:transparent url(../images/glow-big-strong.png) center top no-repeat;
-  margin-bottom:200px;
+/*  margin-bottom:200px;*/
 }
 a#view-projects-btn {
   position:absolute;
@@ -1062,22 +1063,22 @@ a#view-projects-btn {
 a:hover#view-projects-btn { background:transparent url(../images/view-projects-btn.png) center bottom no-repeat; }
 
 /* Fixed column height */
-.latest-works .col { 
+.announcements .col { 
   width:222px;
   margin-right:24px;
 }
-.latest-works header {
+.announcements header {
   width:222px;
   height:35px;
   background:transparent url(../images/col-header.png) center top no-repeat;
 }
-.latest-works header span {
+.announcements header span {
   color:#fff;
   padding:8px 16px 0 16px;
   display:block;
   text-shadow:0 1px 0 #333;
 }
-.latest-works footer {
+.announcements footer {
   width:222px;
   clear:both;
   height:80px;
@@ -1575,12 +1576,12 @@ a:hover.project-back {
 /* Copyright */
 #copyright {
   width:960px;
-  margin-top:100px;
+  margin-top:50px;
   clear:both;
 }
 #copyright p {
   text-align:center;
-  font-size:11px;
+  font-size:12px;
   color:#999;
   margin-bottom:0;
 }

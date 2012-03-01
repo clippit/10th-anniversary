@@ -16,7 +16,7 @@ jQuery(document).ready(function () {
       jQuery('.fixed').css('top',  window.scrollY + "px");
     };
 
-    jQuery('#menu, #logo, .latest-works').localScroll({
+    jQuery('#menu, #logo, .latest').localScroll({
       onAfter : function(){
         change_header_position();
       }
@@ -28,7 +28,7 @@ jQuery(document).ready(function () {
       change_header_position();
     });
   } else {
-    jQuery('#logo, .latest-works').localScroll();
+    jQuery('#logo, .latest').localScroll();
     jQuery('#menu').onePageNav({
        changeHash: true
     });
@@ -37,9 +37,6 @@ jQuery(document).ready(function () {
   
   /* PrettyPhoto
    ------------------------------------------------------------------------*/
-   
-   /* Social markup */
-  var pp_social_tools = '<div class="pp_social"><div class="twitter"><a href="http://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div><div class="facebook"><iframe src="http://www.facebook.com/plugins/like.php?locale=en_US&href='+location.href+'&amp;layout=button_count&amp;show_faces=true&amp;width=500&amp;action=like&amp;font&amp;colorscheme=light&amp;height=24" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:500px; height:24px;" allowTransparency="true"></iframe></div></div>';
   
   function prettyphoto() {
     jQuery('a[data-gal^="lightbox"]').prettyPhoto({
@@ -49,7 +46,7 @@ jQuery(document).ready(function () {
       default_width: 600,
       default_height: 360,
       theme: 'pp_default', /* pp_default / facebook / light_rounded / dark_rounded / light_square / dark_square */
-      social_tools : pp_social_tools
+      social_tools : false
     });
   }
   
@@ -74,14 +71,15 @@ jQuery(document).ready(function () {
    
   /* Homepage slider */
   jQuery('#homepage-slider').RSlider({
-                   delay      : 0,
-                   duration     : 1000,
-                   height     : 480,
-                   width      : 960,
-                   slices     : 6,
-                   easing     : 'easeOutExpo',
-                   effect     : 'vertical_slice'
-                   });
+    delay          : 5000,
+    duration       : 1000,
+    height         : 480,
+    width          : 960,
+    slices         : 6,
+    easing         : 'easeOutExpo',
+    effect         : 'vertical_slice',
+    pause_on_hover : true
+  });
   
   /* Showcase slider */
   jQuery('#showcase-slider').RSlider({
@@ -168,107 +166,107 @@ jQuery(document).ready(function () {
   /* Portfolio
    ------------------------------------------------------------------------*/
   
-  jQuery('.portfolio-grid').parent().each(function(){
+  // jQuery('.portfolio-grid').parent().each(function(){
                       
-    var
-      speed = 750,  // animation speed
-      container = jQuery(this),
-      filter_efx = jQuery('.portfolio-grid', container).data('filter-efx'),
-      portfolio_grid = jQuery('.portfolio-grid', container);
+  //   var
+  //     speed = 750,  // animation speed
+  //     container = jQuery(this),
+  //     filter_efx = jQuery('.portfolio-grid', container).data('filter-efx'),
+  //     portfolio_grid = jQuery('.portfolio-grid', container);
       
-      if (filter_efx === undefined || filter_efx === '') filter_efx  = 'hide';
-      else filter_efx = filter_efx;
+  //     if (filter_efx === undefined || filter_efx === '') filter_efx  = 'hide';
+  //     else filter_efx = filter_efx;
       
-    /* Add active class to first navigation item */
-    jQuery('.portfolio-nav li:first-child a', container).addClass('active');
+  //   /* Add active class to first navigation item */
+  //   jQuery('.portfolio-nav li:first-child a', container).addClass('active');
     
-    if (jQuery('.portfolio-nav li', container).size() > 0) var first_class = jQuery('.portfolio-nav li:first-child a', container).attr('class').split(' ')[0];
+  //   if (jQuery('.portfolio-nav li', container).size() > 0) var first_class = jQuery('.portfolio-nav li:first-child a', container).attr('class').split(' ')[0];
     
-    portfolio_grid.masonry({
-      columnWidth: 246, // Column width 222px + margin right 24px
-      singleMode: true,
-      resizeable: false,
-      /* only apply masonry layout to visible elements */
-      itemSelector: '.grid-item:not(.invis)',
-      animate: true,
-      animationOptions: {
-        easing: 'easeOutQuad',
-        duration: speed,
-        queue: false
-      }
-    });
+  //   portfolio_grid.masonry({
+  //     columnWidth: 246, // Column width 222px + margin right 24px
+  //     singleMode: true,
+  //     resizeable: false,
+  //     /* only apply masonry layout to visible elements */
+  //     itemSelector: '.grid-item:not(.invis)',
+  //     animate: true,
+  //     animationOptions: {
+  //       easing: 'easeOutQuad',
+  //       duration: speed,
+  //       queue: false
+  //     }
+  //   });
     
-    /* Show items only with first category */
-    if (first_class != 'all') {
-      if (filter_efx == 'hide') {
-        jQuery('.grid-item:not(.'+first_class+')', portfolio_grid).addClass('invis').hide();
-        portfolio_grid.masonry();
-      } else {
-        jQuery('.grid-item:not(.'+first_class+')', portfolio_grid).addClass('invis').animate({opacity : .1},speed);
-      }
-    }
+  //   /* Show items only with first category */
+  //   if (first_class != 'all') {
+  //     if (filter_efx == 'hide') {
+  //       jQuery('.grid-item:not(.'+first_class+')', portfolio_grid).addClass('invis').hide();
+  //       portfolio_grid.masonry();
+  //     } else {
+  //       jQuery('.grid-item:not(.'+first_class+')', portfolio_grid).addClass('invis').animate({opacity : .1},speed);
+  //     }
+  //   }
     
-    /* projects navigation action */
-    jQuery('.portfolio-nav li a', container).click(function(){
+  //   /* projects navigation action */
+  //   jQuery('.portfolio-nav li a', container).click(function(){
                           
-      /* Remove .active class from projects navigation */
-      jQuery('.portfolio-nav li a', container).removeClass('active');
-      var project_cat = '.' + jQuery(this).attr('class');
+  //     /* Remove .active class from projects navigation */
+  //     jQuery('.portfolio-nav li a', container).removeClass('active');
+  //     var project_cat = '.' + jQuery(this).attr('class');
       
-      if (project_cat == '.all') {
-        /* Show all hidden boxes */
-        var el = portfolio_grid.children('.invis').toggleClass('invis');
-        if (filter_efx == 'hide') {
-          el.fadeIn(speed);
+  //     if (project_cat == '.all') {
+  //       /* Show all hidden boxes */
+  //       var el = portfolio_grid.children('.invis').toggleClass('invis');
+  //       if (filter_efx == 'hide') {
+  //         el.fadeIn(speed);
           
-          /* Run masonry class */
-          portfolio_grid.masonry();
-        } else {
-          el.animate({opacity : 1},speed);
-        }
-      } else {
-        var hide_el = portfolio_grid.children().not(project_cat).not('.invis').toggleClass('invis');
-        var show_el = portfolio_grid.children(project_cat+'.invis').toggleClass('invis');
+  //         /* Run masonry class */
+  //         portfolio_grid.masonry();
+  //       } else {
+  //         el.animate({opacity : 1},speed);
+  //       }
+  //     } else {
+  //       var hide_el = portfolio_grid.children().not(project_cat).not('.invis').toggleClass('invis');
+  //       var show_el = portfolio_grid.children(project_cat+'.invis').toggleClass('invis');
         
-        if (filter_efx == 'hide') {
-          /* Hide visible boxes */
-          hide_el.fadeOut(speed);
-          /* Show hidden boxes */
-          show_el.fadeIn(speed);
-          /* Run masonry class */
-          portfolio_grid.masonry();
+  //       if (filter_efx == 'hide') {
+  //         /* Hide visible boxes */
+  //         hide_el.fadeOut(speed);
+  //         /* Show hidden boxes */
+  //         show_el.fadeIn(speed);
+  //         /* Run masonry class */
+  //         portfolio_grid.masonry();
           
-        } else {
-          /* Hide visible boxes */
-          hide_el.animate({opacity : .1},speed);
-          /* Show hidden boxes */
-          show_el.animate({opacity : 1},speed);
-        }
+  //       } else {
+  //         /* Hide visible boxes */
+  //         hide_el.animate({opacity : .1},speed);
+  //         /* Show hidden boxes */
+  //         show_el.animate({opacity : 1},speed);
+  //       }
         
-      }
+  //     }
 
-      /* Add .active class to projects navigation */
-      jQuery(this).addClass('active');
-      return false;
-    });
+  //     /* Add .active class to projects navigation */
+  //     jQuery(this).addClass('active');
+  //     return false;
+  //   });
   
-    /* Hover effect */
-    var portfolio_hover = {
-      init : function() {
-          var el = jQuery('.portfolio-item', container);
-          el.hover(function(){
-            jQuery('.portfolio-hover', this).stop().fadeTo(600, 0.70);
-            jQuery('.portfolio-content', this).css('left', '-222px');
-            jQuery('.portfolio-content', this).stop().animate({ left : '0px'}, { queue: false, duration: 450, easing: 'easeOutQuint' })
-          }, function(){
-            jQuery('.portfolio-hover', this).stop().fadeTo(800, 0);
-            jQuery('.portfolio-content', this).stop().animate({ left : '222px'}, { queue: false, duration: 300, easing: 'easeOutQuint' })
-          })
-        }
-    }
-    portfolio_hover.init();
+  //   /* Hover effect */
+  //   var portfolio_hover = {
+  //     init : function() {
+  //         var el = jQuery('.portfolio-item', container);
+  //         el.hover(function(){
+  //           jQuery('.portfolio-hover', this).stop().fadeTo(600, 0.70);
+  //           jQuery('.portfolio-content', this).css('left', '-222px');
+  //           jQuery('.portfolio-content', this).stop().animate({ left : '0px'}, { queue: false, duration: 450, easing: 'easeOutQuint' })
+  //         }, function(){
+  //           jQuery('.portfolio-hover', this).stop().fadeTo(800, 0);
+  //           jQuery('.portfolio-content', this).stop().animate({ left : '222px'}, { queue: false, duration: 300, easing: 'easeOutQuint' })
+  //         })
+  //       }
+  //   }
+  //   portfolio_hover.init();
   
-  });
+  // });
   
   /* News
    ------------------------------------------------------------------------*/
