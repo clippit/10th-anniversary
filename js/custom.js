@@ -82,27 +82,27 @@ jQuery(document).ready(function () {
   });
   
   /* Showcase slider */
-  jQuery('#showcase-slider').RSlider({
-                   delay      : 5000,
-                   duration     : 1000,
-                   height     : 480,
-                   width      : 960,
-                   slices     : 6,
-                   easing     : 'easeOutExpo',
-                   effect     : 'fade',
-                   pause_on_hover : true
-                   });
+  // jQuery('#showcase-slider').RSlider({
+  //                  delay      : 5000,
+  //                  duration     : 1000,
+  //                  height     : 480,
+  //                  width      : 960,
+  //                  slices     : 6,
+  //                  easing     : 'easeOutExpo',
+  //                  effect     : 'fade',
+  //                  pause_on_hover : true
+  //                  });
   /* Medium slider */
-  jQuery('.medium-slider').RSlider({
-                   delay      : 5000,
-                   duration     : 1000,
-                   height     : 300,
-                   width      : 960,
-                   slices     : 6,
-                   easing     : 'easeOutExpo',
-                   effect     : 'fade',
-                   pause_on_hover : true
-                   });
+  // jQuery('.medium-slider').RSlider({
+  //                  delay      : 5000,
+  //                  duration     : 1000,
+  //                  height     : 300,
+  //                  width      : 960,
+  //                  slices     : 6,
+  //                  easing     : 'easeOutExpo',
+  //                  effect     : 'fade',
+  //                  pause_on_hover : true
+  //                  });
   
   
   /* Display sliders navigation */
@@ -110,18 +110,18 @@ jQuery(document).ready(function () {
   jQuery('.navigation').hover(function(){
     jQuery('.rs-nav',this).stop().animate({ opacity : 1 }, { queue: false, duration: 450});
     jQuery('.rs-next',this).stop().animate({ right : '10px'}, { queue: false, duration: 450, easing: 'easeOutQuint' });
-    jQuery('.rs-prev',this).stop().animate({ left : '10px'}, { queue: false, duration: 450, easing: 'easeOutQuint' })
+    jQuery('.rs-prev',this).stop().animate({ left : '10px'}, { queue: false, duration: 450, easing: 'easeOutQuint' });
   }, function(){
     jQuery('.rs-nav',this).stop().animate({ opacity : 0 }, { queue: false, duration: 450});
     jQuery('.rs-next',this).stop().animate({ right : '-68px'}, { queue: false, duration: 450, easing: 'easeOutQuint' });
-    jQuery('.rs-prev',this).stop().animate({ left : '-68px'}, { queue: false, duration: 450, easing: 'easeOutQuint' })
-  })
+    jQuery('.rs-prev',this).stop().animate({ left : '-68px'}, { queue: false, duration: 450, easing: 'easeOutQuint' });
+  });
   
 
   /* Contact Form
    ------------------------------------------------------------------------*/
   /* Messages */
-  var invalid_answer = 'Validation Error: Invalid answer',
+  /*var invalid_answer = 'Validation Error: Invalid answer',
     is_not_valid = 'Validation Error: Value is not valid',
     success = '<strong>Your message has been sent. Thank you for contacting us.</strong>',
     error = 'Error: Sending message';
@@ -160,7 +160,7 @@ jQuery(document).ready(function () {
       function(form) {
         form.find('.rf-message').html(error);
       }
-  });
+  });*/
   
   
   /* Portfolio
@@ -345,10 +345,10 @@ jQuery(document).ready(function () {
    });
   
   /* Tooltip */
-  jQuery('.tip').tipsy({
-    fade : true,
-    gravity: 's'
-  });
+  // jQuery('.tip').tipsy({
+  //   fade : true,
+  //   gravity: 's'
+  // });
   
   
   /* Cufon Fonts
@@ -357,180 +357,4 @@ jQuery(document).ready(function () {
 
   
 /* End custom scripts */
-})
-
-
-;(function ($) {
-
-  /*
-   *  R-DYNAMIC LIST
-   *  Copyright (c) 2010 Rascals Labs
-   *  http://www.rascals.eu
-   *  rascals@rascals.eu
-   *  ver 1.0
-   */
-
-  jQuery.fn.RDynamicList = function(options) {
-    
-    return this.each(function() {
-      var opts = jQuery.extend({
-        'display_num' : 4,
-        'element_height' : 65,
-        'border' : 0
-      }, options);
-         
-      /* List variables */
-      var container = $('ul', this),
-        list_padding = $('li', this).css('padding-bottom').replace('px', ''),
-        element_height = opts.element_height + 2*(parseInt(list_padding))+opts.border,
-        list_height = opts.display_num * (element_height),
-        element_num = $('li' ,this).size(),
-        total = element_num - opts.display_num,
-        current = 0;
-      
-      /* Bulid list */
-      $('li' ,this).css('height', opts.element_height+'px');
-      $('.dynamic-container', this).css('height', list_height+'px');
-      
-      /* Display navigation list */
-      if (element_num > opts.display_num ) {
-        
-        /* Add navigation arrows */
-        $(this).append('<div class="dynamic-nav"><a href="" class="nav-up"></a><a href="" class="nav-down"></a></div>');
-        
-        /* Bind click functions */
-        $('a.nav-next', this).click(function () {
-          if (current == total) current = total;
-          else current++;
-          container.animate({ top: (-current) * element_height }, { duration: 400, easing: 'easeOutQuart', queue: false });
-          return false;
-        });
-        
-        $('a.nav-prev', this).click(function () {
-          if (current === 0) current = 0;
-          else current--;
-          container.animate({ top: (-current) * element_height }, { duration: 400, easing: 'easeOutQuart', queue: false });
-          return false;
-        });
-      }
-    });
-  };
-
-})(jQuery);
-
-
-(function ($) {
-
-  /*
-   *  R-Accordion
-   *  Copyright (c) 2011 Rascals Labs
-   *  http://www.rascals.eu
-   *  rascals@rascals.eu
-   *  ver 1.0
-   */
-
-  jQuery.fn.RAccordion = function(options) {
-    
-    return this.each(function() {
-      var opts = jQuery.extend({
-        'element' : 'li'
-      }, options);
-           
-      /* List variables */
-      var accordion = $(this);
-
-      /* Show active element */
-      $('.active .hidden-content', accordion).show();
-      
-      /* Click on accordion list item */
-      $(opts.element, this).click(function () {
-        if (!$(this).is('.active')) {
-          
-          /* Hide all active items */
-          $('.active', accordion).removeClass('active').find('.hidden-content').slideUp(400);
-          
-          /* Add active class to this item */
-          $(this).addClass('active');
-          $('.hidden-content', this).slideDown(400);
-        }
-        return false;
-      });
-      
-    });
-  };
-
-})(jQuery);
-
-(function ($) {
-
-  /*
-   *  R-Toggle
-   *  Copyright (c) 2011 Rascals Labs
-   *  http://www.rascals.eu
-   *  rascals@rascals.eu
-   *  ver 1.0
-   */
-
-  jQuery.fn.RToggle = function(options) {
-    
-    return this.each(function() {
-      var opts = jQuery.extend({
-        'toggle_switch' : 'li'
-      }, options);
-           
-      /* List variables */
-      var toggle = $(this);
-
-      /* Show active element */
-      if (toggle.is('.active')) {
-        $(opts.toggle_switch, toggle).addClass('active');
-        $('.hidden-content', toggle).show();
-      }
-  
-      /* Click on toggle list item*/
-      $(opts.toggle_switch, toggle).click(function () {
-        if ($(this).is('.active')) {
-          $(this).removeClass('active');
-          $('.hidden-content', toggle).slideUp(400);
-        } else {
-          $(this).addClass('active');
-          $('.hidden-content', toggle).slideDown(400);
-        }
-        return false;
-      });
-      
-    });
-  };
-
-})(jQuery);
-
-
-// (function($){
-//   $.fn.changeNav = function(options) {
-//     $.fn.changeNav.defaults = {
-//       currentClass: 'current'
-//     };
-
-//     var opts = $.extend({}, $.fn.changeNav.defaults, options),
-//         ChangeNav = {},
-//         $this = $(this);
-
-//     ChangeNav.adjustNav = function($this, $element, curClass) {
-//       $this.find('.'+curClass).removeClass(curClass);
-//       $element.addClass(curClass);
-//     };
-
-//     ChangeNav.init = function($this, opts) {
-//       $this.find('a').on('click', function(e) {
-//         ChangeNav.adjustNav($this, $(this).parent(), opts.currentClass);
-//         e.preventDefault();
-//       });
-//     };
-
-    
-
-
-//     return ChangeNav.init($this, opts);
-
-//   };
-// })(jQuery);
+});
