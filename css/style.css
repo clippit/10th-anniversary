@@ -866,7 +866,7 @@ ul#menu li a {
   line-height: 16px;
   font-size: 16px;
   font-weight:bold;
-  color: #fff;
+  color: #eee;
   border:none;
   text-decoration: none;
   text-transform:uppercase;
@@ -1569,6 +1569,7 @@ a:hover.project-back {
   overflow:hidden;
   margin:60px auto 100px auto;
   height:157px;
+  position: relative;
 /*  height:357px;
   background:transparent url(../images/footer-bg.png) center top no-repeat;*/
 }
@@ -1584,6 +1585,19 @@ a:hover.project-back {
   font-size:12px;
   color:#999;
   margin-bottom:0;
+}
+
+#forkme {
+  width:960px;
+  margin:0 auto;
+  text-align:center;
+  clear:both;
+  position: absolute;
+  bottom:0;
+}
+
+#forkme a{
+  color:#fff;
 }
 
 
