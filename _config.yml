@@ -1,0 +1,4 @@
+markdown: rdiscount
+name: 南京大学软件学院成立十周年
+exclude: [ README.md, js/jquery.googlemaps1.01.js, js/jquery.masonry.min.js, js/jquery.R-Forms.js, js/jquery.tipsy.js, js/RSlider.js, fonts/PTSansNarrow_400.js ]
+include: [ .htaccess ]
