@@ -10,4 +10,4 @@
 
     entries = Dir.chdir(base) { filter_entries(Dir.entries('.')) }
 
-保存即可。
+保存即可。[ref](https://github.com/mojombo/jekyll/commit/9d70088f01d41dccbc3e4eedd7f2435ff25dcd31)

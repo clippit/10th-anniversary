@@ -1,5 +1,8 @@
-name: "南京大学软件学院成立十周年"
+name: "南京大学软件学院十周年庆"
+description: "南京大学软件学院成立十周年。2002-2012"
+keywords: [南京大学, 软件学院, 十周年, 院庆]
 
+permalink: none
 markdown: rdiscount
 pygments: false
 lsi: false
@@ -15,3 +18,4 @@ exclude:
  - jquery.tipsy.js
  - RSlider.js
  - PTSansNarrow_400.js
+ - msyh.font.js

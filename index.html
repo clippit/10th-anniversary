@@ -1,3 +1,39 @@
+---
+layout: nil
+
+slider:
+ - image: assets/slider01.jpg
+   link: assets/slider01.jpg
+   is_lightbox: false
+   caption_title: 院庆详细情况见公告
+   caption_content: 学院已毕业校友请进行院友注册
+   effect: vertical_slice
+ - image: assets/slider02.jpg
+   link: assets/slider02.jpg
+   is_lightbox: true
+   caption_title: 浦口南京大学软件学院教学实验楼
+   caption_content: 
+   effect: vertical_mirror
+ - image: assets/slider03.jpg
+   link: assets/slider03.jpg
+   is_lightbox: true
+   caption_title: 鼓楼校区科研综合楼
+   caption_content:
+   effect: horizontal_slice
+ - image: assets/slider04.jpg
+   link: assets/slider04.jpg
+   is_lightbox: true
+   caption_title: 仙林实验楼
+   caption_content: 
+   effect: vertical_mirror
+ - image: assets/slider05.jpg
+   link: assets/slider05.jpg
+   is_lightbox: false
+   caption_title: 南京大学北大楼
+   caption_content:
+   effect: fold
+
+---
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="zh"> <![endif]-->
@@ -6,9 +42,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>南京大学软件学院十周年庆 2002-2012</title>
-  <meta name="description" content="南京大学软件学院十周年庆 2002-2012">
+  <title>{{ site.name }}</title>
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="{{ site.description }}">
+  <meta name="keywords" content="{{ site.keywords | join:", " }}" />
   <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="favicon.ico" />
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
   <link rel="stylesheet" type="text/css" href="js/prettyPhoto/css/prettyPhoto.css" media="screen"/>
   <link rel="stylesheet" href="css/style.css">
@@ -32,7 +71,7 @@
       <li><a href="#announcement">院庆公告</a></li>
       <li><a href="#news">交流动态</a></li>
       <li><a href="#achivement">成果展示</a></li>
-      <li><a href="#history">软院历史</a></li>
+      <li><a href="#history">软院纪略</a></li>
       <li><a href="#download">相关下载</a></li>
       <li><a href="#register">院友注册</a></li>
     </ul>
@@ -51,75 +90,21 @@
   <div id="homepage-slider" class="rs big-slider navigation">
     <!-- slider content -->
     <div class="rs-content">
-      <!-- slide -->
-      <div class="rs-slide" data-effect="vertical_slice">
+      {% for slide in page.slider %}<!-- slide -->
+      <div class="rs-slide" data-effect="{{  slide.effect  }}">
         <div class="rs-slide-content">
-          <!-- image -->
-          <div class="rs-image"><a href="assets/slider01.jpg" class="rs-next-click"><img src="assets/slider01.jpg" alt="assets/slider01.jpg"/></a></div>
-          <!-- /image -->
-        </div>
-      </div>
-      <!-- /slide -->
-      <!-- slide -->
-      <div class="rs-slide" data-effect="vertical_slice">
-        <div class="rs-slide-content">
-          <!-- caption -->
+          {% if slide.caption_title %}<!-- caption -->
           <div class="rs-caption">
-            <h2>软件学院成立十周年</h2>
-            <p>图片描述</p>
+            <h2>{{  slide.caption_title  }}</h2>
+            {% if slide.caption_content %}<p>{{  slide.caption_content  }}</p>{% endif %}
           </div>
-          <!-- /caption -->
+          <!-- /caption -->{% endif %}
           <!-- image -->
-          <div class="rs-image"><a href="assets/slider02.jpg" data-gal="lightbox" title="Project title"><img src="assets/slider02.jpg" alt=""/></a></div>
+          <div class="rs-image"><a href="{{  slide.link  }}" {% if slide.is_lightbox %} data-gal="lightbox" {% else %} class="rs-next-click" {% endif %} title=""><img src="{{  slide.image  }}" alt=""/></a></div>
           <!-- /image -->
-        </div>
-      </div>
-      <!-- /slide -->
-      <!-- slide -->
-      <div class="rs-slide" data-effect="vertical_mirror">
-        <div class="rs-slide-content">
-          <!-- caption -->
-          <div class="rs-caption">
-            <h2>示例示例</h2>
-            <p>软件学院成立十周年软件学院成立十周年</p>
           </div>
-          <!-- /caption -->
-          <!-- image -->
-          <div class="rs-image"><a href="assets/slider03.jpg" data-gal="lightbox" title="Project title"><img src="assets/slider03.jpg" alt=""/></a></div>
-          <!-- /image -->
-        </div>
       </div>
-      <!-- /slide -->
-      <!-- slide -->
-      <div class="rs-slide" data-effect="horizontal_slice">
-        <div class="rs-slide-content">
-          <!-- caption -->
-          <div class="rs-caption">
-            <h2>示例示例</h2>
-            <p>软件学院成立十周年软件学院成立十周年</p>
-          </div>
-          <!-- /caption -->
-          <!-- image -->
-          <div class="rs-image"><a href="assets/slider04.jpg" data-gal="lightbox" title="Project title"><img src="assets/slider04.jpg" alt=""/></a></div>
-          <!-- /image -->
-        </div>
-      </div>
-      <!-- /slide -->
-      <!-- slide -->
-      <div class="rs-slide" data-effect="horizontal_slice">
-        <div class="rs-slide-content">
-          <!-- caption -->
-          <div class="rs-caption">
-            <h2>示例示例</h2>
-            <p>软件学院成立十周年软件学院成立十周年</p>
-          </div>
-          <!-- /caption -->
-          <!-- image -->
-          <div class="rs-image"><a href="assets/slider05.jpg" data-gal="lightbox" title="Project title"><img src="assets/slider05.jpg" alt=""/></a></div>
-          <!-- /image -->
-        </div>
-      </div>
-      <!-- /slide -->
+      <!-- /slide -->{% endfor %}
     </div>
     <!-- /slider content -->
     <!-- slider navigation -->
@@ -135,7 +120,7 @@
   <!-- section content -->
   <div class="latest content clearfix">
     <!-- view all works - button -->
-    <a href="index.html#announcement" id="view-projects-btn"></a>
+    <a href="#announcement" id="view-projects-btn"></a>
     <!-- /view all works - button -->
   </div>
   <!-- /section content -->
@@ -406,7 +391,7 @@
   <div class="section-line"></div>
   <!-- section header -->
   <div class="section-header">
-    <h2>软院历史</h2>
+    <h2>软院纪略</h2>
   </div>
   <!-- /section header -->
   <!-- section content -->
@@ -578,6 +563,9 @@
   <!-- section content -->
   <div class="content clearfix">
     <div class="col col-1-2">
+      {% for post in site.categories.announcement%}
+      {{  post.title }}
+      {% endfor %}
       院友系统是。。。。。。。。。。。。。。。。。。。。。。。
     </div>
     <div class="col col-1-2 last">
@@ -619,7 +607,7 @@
   <script type="text/javascript" src="js/jquery.masonry.min.js"></script>  -->
   <script type="text/javascript" src="js/cufon-yui.js"></script>
   <script type="text/javascript" src="js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
-  <script type="text/javascript" src="fonts/msyh.font.js"></script>
+  <script type="text/javascript" src="fonts/lth.font.js"></script>
 
 
 
