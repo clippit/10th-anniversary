@@ -91,21 +91,25 @@ slider:
   <div id="homepage-slider" class="rs big-slider navigation">
     <!-- slider content -->
     <div class="rs-content">
-      {% for slide in page.slider %}<!-- slide -->
+      {% for slide in page.slider %}
+      <!-- slide -->
       <div class="rs-slide" data-effect="{{  slide.effect  }}">
         <div class="rs-slide-content">
-          {% if slide.caption_title %}<!-- caption -->
+          {% if slide.caption_title %}
+          <!-- caption -->
           <div class="rs-caption">
             <h2>{{  slide.caption_title  }}</h2>
             {% if slide.caption_content %}<p>{{  slide.caption_content  }}</p>{% endif %}
           </div>
-          <!-- /caption -->{% endif %}
+          <!-- /caption -->
+          {% endif %}
           <!-- image -->
           <div class="rs-image"><a href="{{  slide.link  }}" {% if slide.is_lightbox %} data-gal="lightbox" {% else %} class="rs-next-click" {% endif %} title=""><img src="{{  slide.image  }}" alt=""/></a></div>
           <!-- /image -->
           </div>
       </div>
-      <!-- /slide -->{% endfor %}
+      <!-- /slide -->
+      {% endfor %}
     </div>
     <!-- /slider content -->
     <!-- slider navigation -->
