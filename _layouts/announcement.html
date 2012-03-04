@@ -8,12 +8,6 @@
 </head>
 <body>
 {{  content  }}
-<p id="no-js"><a href="{{  site.baseurl  }}">&laquo; 返回 {{ site.name }} 首页</a></p>
-<script type="text/javascript">
-	(function() {
-		var backhome = document.getElementById("no-js");
-		backhome.parentNode.removeChild(backhome);
-	})();
-</script>
+{% include backhome-link.html %}
 </body>
 </html>

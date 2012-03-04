@@ -466,13 +466,13 @@ code, pre {
   border:0;
 }
 .text table td {
-  color: #ddd;
+  color: #333;
   padding: 14px 10px;
   text-align: left;
   border-bottom:1px solid #888;
 }
-.text table td { background:transparent url(../images/opacity30.png) left top repeat; }
-.text table tr:hover td { background:transparent url(../images/opacity50.png) left top repeat; }
+.text table td { background:transparent url(../images/opacity15.png) left top repeat; }
+.text table tr:hover td { background:transparent url(../images/opacity30.png) left top repeat; }
 
 
 /* Images
@@ -1290,15 +1290,12 @@ a:hover.portfolio-link {
   height:22px;
   background:transparent url(../images/news-list-top.png) left top no-repeat;
 }
-.dynamic-container {
+.news-container {
   overflow:hidden;
   width:100%;
-  height:260px;
-  position:relative;
   z-index:1;
 }
 .news-list ul {
-  position:absolute;
   left:0;
   top:0;
   height:100%;
@@ -1318,52 +1315,25 @@ a:hover.portfolio-link {
   height:65px;
   background:transparent url(../images/news-list-item.png) left bottom no-repeat    !important;
 }
-.news-list p {
-  color:#ddd;
-  padding:8px 26px;
+.news-list a{
+  font-size: 1.2em;
+  display: block;
+  color: #ddd;
+  padding: 1.5em 2.4em;
   margin:0;
-  text-shadow:none;
+  text-decoration: none;
 }
-.news-list .date {
-  color:#bbb;
-  line-height:normal;
-  display:block;
-  font-size:11px;
-  text-shadow:none;
-}
-.news-list .active .date {
-  color:#ddd;
+.news-list .active a {
+  color: #fff;
 }
 .news-list-footer {
-  margin-top:-18px;
+  margin-top:-38px;
   width:288px;
   height:136px;
   clear:both;
   z-index:1;
   position:relative;
   background:transparent url(../images/news-list-footer.png) left top no-repeat;
-}
-
-.news-list a.nav-prev, .news-list a.nav-next {
-  position:absolute;
-  width:34px;
-  height:34px;
-  top:34px;
-  display:block;
-}
-.news-list a.nav-prev {
-  left:106px;
-  background:transparent url(../images/news-list-up-btn.png) left top no-repeat;
-}
-.news-list a:hover.nav-prev {
-  background:transparent url(../images/news-list-up-btn.png) left bottom no-repeat;
-}
-.news-list a.nav-next {
-  right:111px;
-  background:transparent url(../images/news-list-down-btn.png) right top no-repeat;
-}
-.news-list a:hover.nav-next {
-  background:transparent url(../images/news-list-down-btn.png) right bottom no-repeat;
 }
 
 /* News articles */

@@ -281,9 +281,12 @@ jQuery(document).ready(function () {
   jQuery('.news-list li:first-child').addClass('active');
   
   /* News list click event */
-  jQuery('.news-list li').click(function(){
-    if (!jQuery(this).is('.active')) {
-      var index = jQuery(this).index();
+  jQuery('.news-list li a').click(function(e){
+    e.preventDefault();
+    var $li = jQuery(this).parent();
+    console.log($li);
+    if (!$li.is('.active')) {
+      var index = $li.index();
       jQuery('.news-list li.active').removeClass('active');
       jQuery('.news-article').hide();
       jQuery('.news-article:eq('+ index +')').fadeIn(400, function(){
@@ -291,15 +294,15 @@ jQuery(document).ready(function () {
           this.style.removeAttribute('filter');
         }
       });
-      jQuery(this).addClass('active');
+      $li.addClass('active');
     }
   });
   
   /* News List */
-  jQuery('.news-list').RDynamicList({
-                    display_num : 5,
-                    element_height : 65
-                    });
+  // jQuery('.news-list').RDynamicList({
+  //                   display_num : 5,
+  //                   element_height : 65
+  //                   });
   
   
   
