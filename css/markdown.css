@@ -84,6 +84,10 @@ body{font-size:14px;}
 body{font-size:16px;}
 }
 
+@media only screen {
+  body{background:#E8E8E8 url(../images/bg.png) left top repeat;}
+}
+
 @media print {
   * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
   body{font-size:12pt; max-width:100%;}

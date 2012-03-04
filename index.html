@@ -141,26 +141,12 @@ slider:
   <!-- /section header -->
   <!-- section content -->
   <div class="announcements content clearfix">
-    <!-- column 1 -->
-    <div class="col col-1-4"> <header><span>一号公告</span></header>
-      <div class="lw-image"> <a href="http://software.nju.edu.cn?iframe=true&amp;width=100%&amp;height=100%" data-gal="lightbox[recent]"> <img src="assets/latest-works01.jpg" width="222" height="256" class="img-zoom" alt=""/> </a> </div>
-      <footer></footer> </div>
-    <!-- /column 1 -->
-    <!-- column 2 -->
-    <div class="col col-1-4"><header><span>二号公告</span></header>
-      <div class="lw-image"> <a href="assets/slider04.jpg" data-gal="lightbox[recent]"> <img src="assets/latest-works02.jpg" width="222" height="256" class="img-zoom" alt=""/> </a> </div>
-      <footer></footer> </div>
-    <!-- /column 2 -->
-    <!-- column 3 -->
-    <div class="col col-1-4"><header><span>三号公告</span></header>
-      <div class="lw-image"> <a href="assets/slider03.jpg" data-gal="lightbox[recent]"> <img src="assets/latest-works03.jpg" width="222" height="256" class="img-zoom" alt=""/> </a> </div>
-      <footer></footer> </div>
-    <!-- /column 3 -->
-    <!-- column 4 -->
-    <div class="col col-1-4 last"><header><span>四号公告</span></header>
-      <div class="lw-image"> <a  href="assets/showcase01.jpg" data-gal="lightbox[recent]"> <img src="assets/latest-works04.jpg" width="222" height="256" class="img-zoom" alt=""/> </a> </div>
-      <footer></footer> </div>
-    <!-- /column 4 -->
+    {% for post in site.categories.announcement %}
+    <div class="col col-1-4"> <header><span>{{  post.thumb_title  }}</span></header>
+      <div class="lw-image"> <a href="{{  post.url  }}?iframe=true&amp;width=80%&amp;height=100%" data-gal="lightbox[recent]"> <img src="{{  post.thumb  }}" width="222" height="256" class="img-zoom" alt=""/> </a> </div>
+      <footer></footer>
+    </div>
+    {% endfor %}
   </div>
   <!-- /section content -->
   <div class="section-line"></div>

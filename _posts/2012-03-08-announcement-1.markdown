@@ -1,6 +1,8 @@
 ---
 layout: announcement
 category: announcement
+thumb: assets/latest-works01.jpg
+thumb_title: 十周年庆典公告
 title: 南京大学软件学院十周年庆典公告
 custom_css: "
   .alignright{
