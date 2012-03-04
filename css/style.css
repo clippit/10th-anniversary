@@ -1336,6 +1336,10 @@ a:hover.portfolio-link {
   background:transparent url(../images/news-list-footer.png) left top no-repeat;
 }
 
+.lt-ie8 .news-list li {
+  margin: -3px 0 -3px 0;
+}
+
 /* News articles */
 .news-article { display:none; }
 
