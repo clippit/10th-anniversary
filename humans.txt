@@ -16,12 +16,10 @@ team:
   Contact: {{ member.contact }}{% if member.twitter %}
   Twitter: {{ member.twitter }}{% endif %}
   {% endfor %}
-/* THANKS */
-  Names (& URL):
 
 /* SITE */
   Standards: HTML5, CSS3
   Components: HTML5 Boilerplate, Modernizr, jQuery, cufón
-  Software: Sublime Text 2, Photoshop
+  Software: Sublime Text 2, jekyll, git, Photoshop
   Language: Simplified Chinese
   Last update: {{ site.time }}
