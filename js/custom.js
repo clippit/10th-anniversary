@@ -285,7 +285,6 @@ jQuery(document).ready(function () {
   jQuery('.news-list li a').click(function(e){
     e.preventDefault();
     var $li = jQuery(this).parent();
-    console.log($li);
     if (!$li.is('.active')) {
       var index = $li.index();
       jQuery('.news-list li.active').removeClass('active');
