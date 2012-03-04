@@ -1596,7 +1596,7 @@ a:hover.project-back {
   bottom:0;
 }
 
-#forkme a{
+#forkme p, #forkme a{
   color:#fff;
 }
 
