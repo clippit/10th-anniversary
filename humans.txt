@@ -1,43 +1,27 @@
-/* the humans responsible & colophon */
-/* humanstxt.org */
+---
+team:
+  - name: Jianjun Leung
+    contact: leungjianjun [at] gmail.com
+    twitter:
+  - name: Letian Zhang
+    contact: zlthooray [at] gmail.com
+    twitter: "@clipppit"
+  - name: Yiming Tang
+    contact: yimingnju [at] gmail.com
+    twitter: "@krafttuc"
+---
 
-
-/* TEAM */
-  <your title>: <your name>
-  Site:
-  Twitter:
-  Location:
-
+/* TEAM */{% for member in page.team %}
+  {{ member.name }}
+  Contact: {{ member.contact }}{% if member.twitter %}
+  Twitter: {{ member.twitter }}{% endif %}
+  {% endfor %}
 /* THANKS */
   Names (& URL):
 
 /* SITE */
   Standards: HTML5, CSS3
-  Components: Modernizr, jQuery
-  Software:
-
-
-
-                               -o/-
-                               +oo//-
-                              :ooo+//:
-                             -ooooo///-
-                             /oooooo//:
-                            :ooooooo+//-
-                           -+oooooooo///-
-           -://////////////+oooooooooo++////////////::
-            :+ooooooooooooooooooooooooooooooooooooo+:::-
-              -/+ooooooooooooooooooooooooooooooo+/::////:-
-                -:+oooooooooooooooooooooooooooo/::///////:-
-                  --/+ooooooooooooooooooooo+::://////:-
-                     -:+ooooooooooooooooo+:://////:--
-                       /ooooooooooooooooo+//////:-
-                      -ooooooooooooooooooo////-
-                      /ooooooooo+oooooooooo//:
-                     :ooooooo+/::/+oooooooo+//-
-                    -oooooo/::///////+oooooo///-
-                    /ooo+::://////:---:/+oooo//:
-                   -o+/::///////:-      -:/+o+//-
-                   :-:///////:-            -:/://
-                     -////:-                 --//:
-                       --                       -:
+  Components: HTML5 Boilerplate, Modernizr, jQuery, cufón
+  Software: Sublime Text 2, Photoshop
+  Language: Simplified Chinese
+  Last update: {{ site.time }}
