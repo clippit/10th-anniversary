@@ -19,6 +19,7 @@ jQuery(document).ready(function () {
     jQuery('#menu, #logo, .latest').localScroll({
       onAfter : function(){
         change_header_position();
+        Cufon.refresh('#menu > li > a');
       }
     });
     
