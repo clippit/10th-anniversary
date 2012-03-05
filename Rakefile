@@ -10,7 +10,7 @@ end
 
 desc "Deploy to server"
 task :deploy do
-  rsync "10th-anniversary"
+  rsync "10th-anniversary/_site"
 end
 
 def jekyll(opts="", path="")
