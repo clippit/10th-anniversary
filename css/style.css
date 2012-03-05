@@ -1398,6 +1398,133 @@ ul.skills li .skill span {
   height:192px;
 }
 
+/*  Timeline   
+----------------------------------------------------------- */
+#NtesModuleTimeline {
+  position: relative; 
+  height: 500px; 
+}
+
+#NtesModuleTimeline ul {
+  margin-bottom: 0px;
+}
+
+#NtesModuleTimeline h3 { 
+  font-size: 3em; 
+  margin-bottom: 5px; 
+  text-align:center;
+  font-weight:bold; 
+}
+
+#NTEStimelineHandler { 
+  height: 60px; 
+  position: relative; 
+  background: #b5bdc8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #b5bdc8 0%, #828c95 36%, #28343b 100%) repeat-x 0 36px; /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b5bdc8), color-stop(36%,#828c95), color-stop(100%,#28343b)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* IE10+ */
+  background: linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
+
+}
+#NtesModuleTimelineContainer img { 
+  border:solid 1px #ccc; 
+  float: left; 
+  margin-right: 5px; 
+}
+
+#NTEStimelineHandler li { 
+  display: inline; 
+  list-style: none; 
+}
+
+#NTEStimelineHandler span { 
+  visibility: hidden; 
+  position: absolute; 
+  width:68px; 
+  height:22px; 
+  color: #FFF; 
+  line-height: 20px; 
+  text-align: center; 
+  background: url(../images/bg_timeline.gif) no-repeat -58px 0px;
+}
+  
+#NTEStimelineHandler b { 
+  display: inline-block; 
+  position: absolute; 
+  height: 18px; 
+  width: 18px; 
+  bottom: 0px; 
+}
+
+#NtesModuleTimelineContainer { 
+  height: 440px;
+  overflow: hidden; 
+  position: relative; 
+}
+
+#NtesModuleTimelineContainer  li { 
+  font-size:1.2em;
+  line-height: 1.5em;
+  padding: 4px 8px;
+}
+#NtesModuleTimelineContainer blockquote { 
+  text-indent:0 px; 
+  line-height:21px; 
+  text-align:left; 
+}
+#NtesModuleTimelineContainer blockquote a { 
+  color: #BA2636; 
+}
+#NtesModuleTimelineContainer div {  
+  /*color: #333; */
+  position: absolute; 
+  top: 10px; 
+  visibility: hidden; 
+  border-radius: 5px; 
+  border: solid 1px #c5c5c5; 
+  padding:10px; 
+  /*overflow:hidden; */
+  
+
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+background: linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+
+  width: 490px; 
+  height: 300px; 
+  -webkit-box-shadow:5px 2px 6px #ccc; 
+  -moz-box-shadow:5px 2px 6px #ccc; 
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=gray, Direction=135, Strength=5); 
+}
+
+.NTEStimelineOff , .NTEStimelineOn {  
+  background: url(../images/bg_timeline.gif) no-repeat 0px 0px; 
+}
+
+.NTEStimelineOn { 
+  background-position: -18px 0; 
+}
+
+#NTEStimelinePointer { 
+  visibility:hidden;
+  top:49px;
+  position:absolute; 
+  display:inline-block; 
+  width:12px; 
+  height:8px; 
+  background:url(../images/bg_timeline.gif) no-repeat -40px 0px; 
+  top:63px;  
+}
+
 
 /* Contact
  ------------------------------------------------------------------------*/
