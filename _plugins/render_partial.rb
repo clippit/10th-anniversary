@@ -21,7 +21,7 @@ module Jekyll
       Dir.chdir(includes_dir) do
         choices = Dir['**/*'].reject { |x| File.symlink?(x) }
         if choices.include?(@file)
-          partial = Page.new(site, site.source, '', @file)
+          partial = Page.new(site, site.source, '_includes', @file)
           partial.render(site.layouts, site.site_payload)
           partial.output
           # source = File.read(@file)
