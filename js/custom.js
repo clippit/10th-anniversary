@@ -272,24 +272,24 @@ jQuery(document).ready(function () {
   
   // });
   
-  /* News
+  /* Achivement
    ------------------------------------------------------------------------*/
    
   /* Show first article */
-  jQuery('.news-article:eq(0)').show();
+  jQuery('.achivement-article:eq(0)').show();
   
-  /* Add active class to first news item */
-  jQuery('.news-list li:first-child').addClass('active');
+  /* Add active class to first achivement item */
+  jQuery('.achivement-list li:first-child').addClass('active');
   
-  /* News list click event */
-  jQuery('.news-list li a').click(function(e){
+  /* achivement list click event */
+  jQuery('.achivement-list li a').click(function(e){
     e.preventDefault();
     var $li = jQuery(this).parent();
     if (!$li.is('.active')) {
       var index = $li.index();
-      jQuery('.news-list li.active').removeClass('active');
-      jQuery('.news-article').hide();
-      jQuery('.news-article:eq('+ index +')').fadeIn(400, function(){
+      jQuery('.achivement-list li.active').removeClass('active');
+      jQuery('.achivement-article').hide();
+      jQuery('.achivement-article:eq('+ index +')').fadeIn(400, function(){
         if (jQuery.browser.msie){
           this.style.removeAttribute('filter');
         }

@@ -1273,11 +1273,11 @@ a:hover.portfolio-link {
   text-shadow:0 1px 0 #eee;
 }
 
-/* News
+/* Achivements
  ------------------------------------------------------------------------*/
  
-/* News list */
-.news-list {
+/* Achivements list */
+.achivement-list {
   overflow:hidden;
   width:100%;
   height:auto;
@@ -1285,37 +1285,37 @@ a:hover.portfolio-link {
   margin-bottom:20px;
   z-index:2;
 }
-.news-list-top {
+.achivement-list-top {
   width:288px;
   height:22px;
   background:transparent url(../images/news-list-top.png) left top no-repeat;
 }
-.news-container {
+.achivement-container {
   overflow:hidden;
   width:100%;
   z-index:1;
 }
-.news-list ul {
+.achivement-list ul {
   left:0;
   top:0;
   height:100%;
   width:100%;
 }
-.news-list ul li {
+.achivement-list ul li {
   width:288px;
   height:65px;
   cursor:pointer;
   background:transparent url(../images/news-list-item.png) left top no-repeat;
 }
-.news-list li:hover {
+.achivement-list li:hover {
   background:transparent url(../images/news-list-item.png) left -65px no-repeat;
 }
-.news-list li:hover .active, .news-list .active {
+.achivement-list li:hover .active, .achivement-list .active {
   width:288px;
   height:65px;
   background:transparent url(../images/news-list-item.png) left bottom no-repeat    !important;
 }
-.news-list a{
+.achivement-list a{
   font-size: 1.2em;
   display: block;
   color: #ddd;
@@ -1323,10 +1323,10 @@ a:hover.portfolio-link {
   margin:0;
   text-decoration: none;
 }
-.news-list .active a {
+.achivement-list .active a {
   color: #fff;
 }
-.news-list-footer {
+.achivement-list-footer {
   margin-top:-38px;
   width:288px;
   height:136px;
@@ -1336,12 +1336,12 @@ a:hover.portfolio-link {
   background:transparent url(../images/news-list-footer.png) left top no-repeat;
 }
 
-.lt-ie8 .news-list li {
+.lt-ie8 .achivement-list li {
   margin: -3px 0 -3px 0;
 }
 
-/* News articles */
-.news-article { display:none; }
+/* Achivements articles */
+.achivement-article { display:none; }
 
 
 /* About

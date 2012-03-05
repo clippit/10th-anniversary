@@ -191,10 +191,10 @@ slider:
   <div class="content clearfix">
     <!-- column 1 -->
     <div class="col col-1-3">
-      <!-- news list -->
-      <div class="news-list">
-        <div class="news-list-top"></div>
-        <div class="news-container">
+      <!-- achivement list -->
+      <div class="achivement-list">
+        <div class="achivement-list-top"></div>
+        <div class="achivement-container">
           <ul>
             {% for post in site.categories.achivement %}
             <li>
@@ -203,22 +203,22 @@ slider:
             {% endfor %}
           </ul>
         </div>
-        <div class="news-list-footer"></div>
+        <div class="achivement-list-footer"></div>
       </div>
-      <!-- /news list -->
+      <!-- /achivement list -->
     </div>
     <!-- /column 1 -->
     <!-- column 2 -->
     <div class="col col-2-3 last">
-      <!-- news articles -->
-      <div class="news-articles">
+      <!-- achivement articles -->
+      <div class="achivement-articles">
         {% for post in site.categories.achivement %}
-        <div class="news-article text">
+        <div class="achivement-article text">
           {{  post.content  }}
         </div>
         {% endfor %}
       </div>
-      <!-- /news articles -->
+      <!-- /achivement articles -->
     </div>
     <!-- /column 2 -->
   </div>
