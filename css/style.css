@@ -235,10 +235,9 @@ del { text-decoration:line-through }
 table { border-collapse:collapse; border-spacing:0 }
 
 
-/* Message for IE6 browser
+/* Message for IE6 browser and no js support
  ------------------------------------------------------------------------*/
-#ie6-message { background:#c00; border-bottom:1px solid #900; position:absolute; top:0; width:100%; z-index:2000;}
-#ie6-message p { text-align:center; color:#fff; font-size:12px; padding:20px; }
+#ie6-message { background:#c00; border-bottom:1px solid #900; position:absolute; top:0; width:100%; z-index:2000; text-align:center; color:#fff; font-size:12px; padding:20px;}
 #ie6-message a { color:#fff; font-weight:bold; text-decoration:underline; }
 
 

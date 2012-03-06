@@ -54,9 +54,13 @@ slider:
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7]><p class=chromeframe>您的浏览器 <em>太古老了！</em> <a href="http://browsehappy.com/">升级成更好的浏览器</a> 或者 <a href="http://www.google.com/chromeframe/?redirect=true">安装 Google Chrome Frame</a> 以获得更好的效果。</p><![endif]-->
+  <p id="ie6-message">您的浏览器禁用了Javascript，启用后方能获得最佳浏览体验。</p>
+  <script type="text/javascript">(function(){
+    var nojs = document.getElementById("ie6-message");
+    nojs.parentNode.removeChild(nojs);
+  })();</script>
+  <!-- Prompt IE 6 users to install Chrome Frame. -->
+  <!--[if lt IE 7]><p class="chromeframe" id="ie6-message">您的浏览器 <em>太古老了！</em> <a href="http://browsehappy.com/">升级成更好的浏览器</a> 或者 <a href="http://www.google.com/chromeframe/?redirect=true">安装 Google Chrome Frame</a> 以获得更好的效果。</p><![endif]-->
   <!-- header -->
   <header id="header" class="fixed">
   <!-- header-content -->
