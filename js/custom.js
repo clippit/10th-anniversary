@@ -9,10 +9,6 @@ jQuery(document).ready(function () {
   if (navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.platform == 'iPod') {
 
     var change_header_position = function() {
-      /* With animation */
-      //jQuery('.fixed').stop().animate({ top : window.scrollY + 'px' }, { queue: false, duration: 450, easing: 'easeOutQuint'});
-      
-      /* Without animation */
       jQuery('.fixed').css('top',  window.scrollY + "px");
     };
 
@@ -85,30 +81,6 @@ jQuery(document).ready(function () {
     pause_on_hover : true
   });
   
-  /* Showcase slider */
-  // jQuery('#showcase-slider').RSlider({
-  //                  delay      : 5000,
-  //                  duration     : 1000,
-  //                  height     : 480,
-  //                  width      : 960,
-  //                  slices     : 6,
-  //                  easing     : 'easeOutExpo',
-  //                  effect     : 'fade',
-  //                  pause_on_hover : true
-  //                  });
-  /* Medium slider */
-  // jQuery('.medium-slider').RSlider({
-  //                  delay      : 5000,
-  //                  duration     : 1000,
-  //                  height     : 300,
-  //                  width      : 960,
-  //                  slices     : 6,
-  //                  easing     : 'easeOutExpo',
-  //                  effect     : 'fade',
-  //                  pause_on_hover : true
-  //                  });
-  
-  
   /* Display sliders navigation */
   jQuery('.navigation .rs-nav').css({opacity : 0, display : 'block'});
   jQuery('.navigation').hover(function(){
@@ -120,51 +92,6 @@ jQuery(document).ready(function () {
     jQuery('.rs-next',this).stop().animate({ right : '-68px'}, { queue: false, duration: 450, easing: 'easeOutQuint' });
     jQuery('.rs-prev',this).stop().animate({ left : '-68px'}, { queue: false, duration: 450, easing: 'easeOutQuint' });
   });
-  
-
-  /* Contact Form
-   ------------------------------------------------------------------------*/
-  /* Messages */
-  /*var invalid_answer = 'Validation Error: Invalid answer',
-    is_not_valid = 'Validation Error: Value is not valid',
-    success = '<strong>Your message has been sent. Thank you for contacting us.</strong>',
-    error = 'Error: Sending message';
-  
-   
-  jQuery('.contact-form').RForms({
-    path : 'contact-form.php',
-    submit :
-      function(form, input) {
-        form.find('.rf-message').html('');
-        form.find('.req').parent().removeClass('error');
-      },
-    valid_error :
-      function(form, input) {
-        input.parent().addClass('error');
-        if (input.is('.valid_asq')) {
-          form.find('.rf-message').append(invalid_answer + ' <br/>');
-        } else {
-          form.find('.rf-message').append(is_not_valid + '<br/>');
-        }
-      },
-    sending :
-      function(form) {
-        form.find('.rf-loader').fadeIn(400);
-      },
-    complete :
-      function(form) {
-        form.find('.rf-loader').fadeOut(400);
-      },
-    success :
-      function(form) {
-        form.find('.rf-item, .rf-send').fadeOut(400);
-        form.find('.rf-message').html(success);
-      },
-    error :
-      function(form) {
-        form.find('.rf-message').html(error);
-      }
-  });*/
   
   
   /* Portfolio
@@ -297,13 +224,6 @@ jQuery(document).ready(function () {
       $li.addClass('active');
     }
   });
-  
-  /* News List */
-  // jQuery('.news-list').RDynamicList({
-  //                   display_num : 5,
-  //                   element_height : 65
-  //                   });
-  
   
   
   /* About

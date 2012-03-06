@@ -24,18 +24,6 @@ module Jekyll
           partial = Page.new(site, site.source, '_includes', @file)
           partial.render(site.layouts, site.site_payload)
           partial.output
-          # source = File.read(@file)
-          # partial = Liquid::Template.parse(source)
-          # context.stack do
-          #   contents = partial.render(context)
-          #   site = context.registers[:site]
-          #   ext = File.extname(@file)
-
-          #   converter = site.converters.find { |c| c.matches(ext) }
-          #   contents = converter.convert(contents) unless converter.nil?
-            
-          #   contents
-          # end
         else
           "Included file '#{@file}' not found in _includes directory"
         end
