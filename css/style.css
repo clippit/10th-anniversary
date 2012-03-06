@@ -1188,41 +1188,10 @@ a:hover#view-projects-btn { background:transparent url(../images/view-projects-b
 
 
 
-/* Portfolio
+/* Downloads
  ------------------------------------------------------------------------*/
- 
-/* Portfolio navigation (filter) list */
-.portfolio-nav {
-  overflow:hidden;
-  clear:both;
-  padding:0;
-  margin:0 0 24px 0;
-}
-.portfolio-nav li {
-  margin-right:8px;
-  float:left;
-}
-.portfolio-nav li a {
-  padding:6px 16px;
-  -moz-border-radius:5px;
-  border-radius:5px;
-  background:transparent url(../images/button-white.png) left top repeat-x;
-  color:#333;
-  float:left;
-  text-align:center;
-  text-decoration:none;
-  text-shadow:0 1px 0 #fff;
-  -moz-box-shadow: 2px 2px 5px 0px #666;
-  -webkit-box-shadow: 2px 2px 5px 0px #666;
-  box-shadow: 2px 2px 5px 0px #666;
-}
-.portfolio-nav li a.active {
-  background:transparent url(../images/button-blue.png) left top repeat-x;
-  color:#fff;
-  text-shadow:0 1px 0 #333;
-}
 
-/* Portfolio grid */
+/* Download grid */
 .grid { 
   width:984px;
   clear:both;
@@ -1234,31 +1203,31 @@ a:hover#view-projects-btn { background:transparent url(../images/view-projects-b
   margin:0 24px 0 0;
 
 }
-.portfolio-grid .grid-item { }
-.portfolio-grid .grid-item header {
+.download-grid .grid-item { }
+.download-grid .grid-item header {
   width:222px;
   height:35px;
   background:transparent url(../images/col-header.png) center top no-repeat;
 }
-.portfolio-grid .grid-item header span {
+.download-grid .grid-item header span {
   color:#fff;
   padding:8px 16px 0 16px;
   display:block;
   text-shadow:0 1px 0 #333;
 }
-.portfolio-grid .grid-item footer {
+.download-grid .grid-item footer {
   width:222px;
   clear:both;
   height:80px;
   background:transparent url(../images/col-footer2.png) center top no-repeat;
 }
-.portfolio-item {
+.download-item {
   position:relative;
   overflow:hidden;
   width:222px;
   height:256px;
 }
-.portfolio-hover {
+.download-hover {
   position:absolute;
   left:0;
   top:0;
@@ -1268,7 +1237,7 @@ a:hover#view-projects-btn { background:transparent url(../images/view-projects-b
   z-index:1;
   display:none;
 }
-.portfolio-content {
+.download-content {
   position:absolute;
   left:-222px;
   top:0;
@@ -1276,13 +1245,13 @@ a:hover#view-projects-btn { background:transparent url(../images/view-projects-b
   height:100%;
   z-index:2;
 }
-.portfolio-content h2 {
+.download-content h2 {
   font-size:24px;
   color:#fff;
   padding:16px;
   margin-bottom:60px;
 }
-a.portfolio-link {
+a.download-link {
   float:left;
   clear:both;
   width:auto;
@@ -1297,15 +1266,15 @@ a.portfolio-link {
   -moz-border-radius:5px;
   border-radius:5px;
 }
-a:hover.portfolio-link {
+a:hover.download-link {
   background-color:#3399ff;
   text-decoration:none;
   color:#fff;
 }
-.portfolio-cat {
+.download-cat {
   text-align:center;
 }
-.portfolio-cat span {
+.download-cat span {
   text-align:center;
   margin:10px auto 10px;
   line-height:normal;

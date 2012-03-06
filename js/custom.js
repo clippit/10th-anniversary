@@ -198,6 +198,24 @@ jQuery(document).ready(function () {
   //   portfolio_hover.init();
   
   // });
+
+  /* Download Hover Effect
+   ------------------------------------------------------------------------*/
+  var download_hover = {
+    init : function() {
+        var el = jQuery('.download-item');
+        el.hover(function(){
+          jQuery('.download-hover', this).stop().fadeTo(600, 0.70);
+          jQuery('.download-content', this).css('left', '-222px');
+          jQuery('.download-content', this).stop().animate({ left : '0px'}, { queue: false, duration: 450, easing: 'easeOutQuint' })
+        }, function(){
+          jQuery('.download-hover', this).stop().fadeTo(800, 0);
+          jQuery('.download-content', this).stop().animate({ left : '222px'}, { queue: false, duration: 300, easing: 'easeOutQuint' })
+        })
+      }
+  }
+  download_hover.init();
+
   
   /* Achivement
    ------------------------------------------------------------------------*/

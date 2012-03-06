@@ -340,57 +340,7 @@ slider:
   <!-- /section header -->
   <!-- section content -->
   <div class="content clearfix">
-    <div class="col col-1-2 text">
-      <h3>Send a message if you have any question</h3>
-      <!-- contact form -->
-      <div class="rf contact-form">
-        <!-- form item -->
-        <div class="rf-item input">
-          <input type="text" onBlur="if (this.value == '') {this.value = 'Name:'}" onFocus="if (this.value == 'Name:') {this.value = ''}" name="data[name]" value="Name:" class="req valid_length" />
-        </div>
-        <!-- /form item -->
-        <!-- form item -->
-        <div class="rf-item input">
-          <input type="text" onBlur="if (this.value == '') {this.value = 'E-mail:'}" onFocus="if (this.value == 'E-mail:') {this.value = ''}" name="data[email]" value="E-mail:" class="req valid_email" />
-        </div>
-        <!-- /form item -->
-        <!-- form item -->
-        <div class="rf-item input">
-          <input type="text" onBlur="if (this.value == '') {this.value = 'Phone:'}" onFocus="if (this.value == 'Phone:') {this.value = ''}" name="data[phone]" value="Phone:" class="req valid_length" />
-        </div>
-        <!-- /form item -->
-        <!-- form item -->
-        <div class="rf-item input">
-          <textarea cols="5" rows="10" name="data[message]" onBlur="if (this.value == '') {this.value = 'Message:'}" onFocus="if (this.value == 'Message:') {this.value = ''}" class="req valid_length">Message:</textarea>
-        </div>
-        <!-- /form item -->
-        <!-- form item -->
-        <div class="rf-item input" style="width:120px">
-          <input type="text" onBlur="if (this.value == '') {this.value = '2+5='}" onFocus="if (this.value == '2+5=') {this.value = ''}" name="asq" value="2+5=" class="req valid_asq valid_length" />
-        </div>
-        <!-- /form item -->
-        <!-- form item (submit)-->
-        <div class="rf-submit">
-          <input type="submit" value="Send Message" class="submit rf-send" />
-          <span class="rf-loader"></span> <span class="rf-message"></span> </div>
-        <!-- /form item (submit) -->
-      </div>
-      <!-- /contact form -->
-    </div>
-    <div class="col col-1-2 text last">
-      <h3>Find us</h3>
-      <div id="gmap-wrap" class="frame">
-        <div id="gmap"></div>
-      </div>
-      <div class="col col-1-4">
-        <p>Lorem ipsum dolorsit amet, consectetur adipiscing elit. In sagittis tincidunt leo ut volutpat. Nullam dictum lorem eget mi fermentum ultrices eleifend est condimentum. </p>
-      </div>
-      <div class="col col-1-4 last">
-        <p class="address-box"> <strong>9988 Main Road, Warsaw, <br/>
-          02-933. Poland<br/>
-          </strong> <span class="left">Freephone:</span><span class="right">+01 800 559 6580</span> <span class="left">Telephone:</span><span class="right">+01 959 603 6035</span> <span class="left">FAX:</span><span class="right">+01 504 889 9898</span> <span class="left">E-mail:</span><span class="right"><a href="mailto:mail@demolink.org">mail@demolink.org</a></span> </p>
-      </div>
-    </div>
+    {% render_partial downloads.html %}
   </div>
   <!-- /section content -->
   <div class="section-line"></div>

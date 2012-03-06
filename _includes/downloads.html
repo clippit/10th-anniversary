@@ -1,0 +1,35 @@
+---
+downloads:
+  - header: 软件学院十周年庆祝标识
+    title: 院庆Logo
+    thumb: assets/download1.jpg
+    links:
+      - file: downloads/logo1.png
+        description: 版本一
+      - file: downloads/logo2.png
+        description: 版本二
+    category: 图像
+---
+
+<div class="grid download-grid clearfix">
+  {% for item in page.downloads %}
+  <!-- download item -->
+  <div class="grid-item images"> <header><span>{{  item.header  }}</span></header>
+    <div class="download-item">
+      <!-- download content -->
+      <div class="download-content">
+        <h2>{{  item.title  }}</h2>
+        {% for link in item.links %}
+        <a href="{{  link.file  }}" class="download-link" target="_blank" >{{  link.description  }}</a>
+        {% endfor %}
+      </div>
+      <!-- /portfolio content -->
+      <div class="download-hover"></div>
+      <img src="{{  item.thumb  }}" alt="" /> </div>
+    <footer>
+    <div class="download-cat"><span>{{  item.category  }}</span></div>
+    </footer>
+  </div>
+  <!-- /download item -->
+  {% endfor %}
+</div>
