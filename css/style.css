@@ -1630,7 +1630,6 @@ a:hover.project-back {
 /* Copyright */
 #copyright {
   width:960px;
-  margin-top:50px;
   clear:both;
 }
 #copyright p {
@@ -1650,6 +1649,8 @@ a:hover.project-back {
 }
 
 #forkme p, #forkme a{
+  font-size:10px;
+  line-height:10px;
   color:#fff;
 }
 
