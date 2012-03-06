@@ -1347,62 +1347,13 @@ a:hover.portfolio-link {
 /* About
  ------------------------------------------------------------------------*/
  
-/* Skills list */
-ul.skills {
-  width:288px;
-  padding-top:32px;
-  margin-bottom:0;
-}
-ul.skills li {
-  padding-bottom:16px;
-}
-ul.skills li .skill { 
-  padding-bottom:4px;
-  font-weight:bold;
-  color:#444;
-  display:block;
-}
-ul.skills li .skill span {
-  color:#666;
-  font-weight:normal;
-  font-size:11px;
-}
-.skill-bar {
-  width:100%;
-  height:15px;
-  background:transparent url(../images/skill-bar.png) left bottom no-repeat;
-  display:block;
-}
-.skill-bar span {
-  width:100%;
-  height:15px;
-  display:block;
-  background:transparent url(../images/skill-bar.png) left top no-repeat;
-}
-.skills-graph {
-  margin-bottom:24px;
-  width:288px;
-  height:16px;
-  background:transparent url(../images/skills-graph.png) left top no-repeat;
-}
 
-/* About slider classes */
-#about-slider { 
-  margin-bottom: 16px;
-  padding-bottom:40px;
-  background:transparent url(../images/shadow-medium.png) center bottom no-repeat;
-}
-#about-slider .rs-content { height:192px; }
-#about-slider .rs-slide {
-  width:624px;
-  height:192px;
-}
 
 /*  Timeline   
 ----------------------------------------------------------- */
 #NtesModuleTimeline {
   position: relative; 
-  height: 500px; 
+  height: 560px; 
 }
 
 #NtesModuleTimeline ul {
@@ -1412,27 +1363,24 @@ ul.skills li .skill span {
 #NtesModuleTimeline h3 { 
   font-size: 3em; 
   margin-bottom: 5px; 
-  text-align:center;
-  font-weight:bold; 
+  text-align: center;
+  font-weight: bold; 
 }
 
 #NTEStimelineHandler { 
   height: 60px; 
   position: relative; 
-  background: #b5bdc8; /* Old browsers */
-  background: -moz-linear-gradient(top,  #b5bdc8 0%, #828c95 36%, #28343b 100%) repeat-x 0 36px; /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b5bdc8), color-stop(36%,#828c95), color-stop(100%,#28343b)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* IE10+ */
-  background: linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
-
 }
-#NtesModuleTimelineContainer img { 
-  border:solid 1px #ccc; 
-  float: left; 
-  margin-right: 5px; 
+
+#NTEStimelineHandler #line {
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  bottom: 0px;
+  background-color: #999;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
 }
 
 #NTEStimelineHandler li { 
@@ -1445,10 +1393,12 @@ ul.skills li .skill span {
   position: absolute; 
   width:68px; 
   height:22px; 
-  color: #FFF; 
-  line-height: 20px; 
+  color: #FFF;
+  text-shadow:0 1px 0 #333; 
+  line-height: 20px;
+  font-size:12px;
   text-align: center; 
-  background: url(../images/bg_timeline.gif) no-repeat -58px 0px;
+  background: url(../images/bg_timeline.png) no-repeat -58px 0px;
 }
   
 #NTEStimelineHandler b { 
@@ -1456,58 +1406,37 @@ ul.skills li .skill span {
   position: absolute; 
   height: 18px; 
   width: 18px; 
-  bottom: 0px; 
+  bottom: -6px; 
 }
 
 #NtesModuleTimelineContainer { 
-  height: 440px;
+  height: 500px;
   overflow: hidden; 
   position: relative; 
+  text-shadow:0 1px 0 #eee;
+}
+
+#NtesModuleTimelineContainer div {  
+  position: absolute; 
+  top: 10px; 
+  width: 490px; 
+  padding:10px;
+  overflow:hidden;
+  visibility: hidden;
+  background: #bbb; 
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  border-bottom: 1px solid #333;
 }
 
 #NtesModuleTimelineContainer  li { 
-  font-size:1.2em;
   line-height: 1.5em;
-  padding: 4px 8px;
-}
-#NtesModuleTimelineContainer blockquote { 
-  text-indent:0 px; 
-  line-height:21px; 
-  text-align:left; 
-}
-#NtesModuleTimelineContainer blockquote a { 
-  color: #BA2636; 
-}
-#NtesModuleTimelineContainer div {  
-  /*color: #333; */
-  position: absolute; 
-  top: 10px; 
-  visibility: hidden; 
-  border-radius: 5px; 
-  border: solid 1px #c5c5c5; 
-  padding:10px; 
-  /*overflow:hidden; */
-  
-
-background: #ffffff; /* Old browsers */
-background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
-background: linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-
-
-  width: 490px; 
-  height: 300px; 
-  -webkit-box-shadow:5px 2px 6px #ccc; 
-  -moz-box-shadow:5px 2px 6px #ccc; 
-  filter: progid:DXImageTransform.Microsoft.Shadow(color=gray, Direction=135, Strength=5); 
+  margin:4px 8px;
 }
 
 .NTEStimelineOff , .NTEStimelineOn {  
-  background: url(../images/bg_timeline.gif) no-repeat 0px 0px; 
+  background: url(../images/bg_timeline.png) no-repeat 0px 0px; 
 }
 
 .NTEStimelineOn { 
@@ -1521,7 +1450,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   display:inline-block; 
   width:12px; 
   height:8px; 
-  background:url(../images/bg_timeline.gif) no-repeat -40px 0px; 
+  background:url(../images/bg_timeline.png) no-repeat -40px 0px; 
   top:63px;  
 }
 
