@@ -1494,7 +1494,7 @@ ul.skills li .skill span {
 /* Register Form */
 .rf-item { width:auto; }
 .rf-item input { width:100%; }
-.ie7 .rf-item input { width:99%;}
+.lt-ie8 .rf-item input { width:99%;}
 .rf-item textarea { width:99%; }
 .rf .error { border: 1px solid #ffff99; }
 .rf-submit {
@@ -1507,47 +1507,16 @@ input.rf-send {
   float:right;
   margin:0;
 }
-.rf-message {
-  font-size:12px;
-  float: left;
-  color:#666;
-  padding-top:6px;
-}
-.rf-loader {
-  float:right;
-  width:60px;
-  height:30px;
-  margin-right:10px;
-  display:none;
-  background:transparent url(../images/loader.gif) 50% 50% no-repeat scroll;
-}
 #login {
   margin-top: 30px;
 }
 #email-input {
   width:11em;
   float:left;
+  margin-top: 3px;
 }
 #email-postfix {
   float:right;
-}
-
-/* Google Maps */
-#gmap-wrap {
-  margin-bottom:24px;
-}
-#gmap {
-  overflow:hidden;
-  width: 448px;
-  height:192px;
-}
-
-/* Text box */
-.address-box .left {
-  width:40%;
-}
-.address-box .right {
-  width:60%;
 }
 
 
