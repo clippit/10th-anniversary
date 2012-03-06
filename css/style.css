@@ -1433,37 +1433,32 @@ a:hover.portfolio-link {
 .achivement-article { display:none; }
 
 
-/* About
- ------------------------------------------------------------------------*/
- 
-
-
 /*  Timeline   
 ----------------------------------------------------------- */
-#NtesModuleTimeline {
+#timeline {
   position: relative; 
   height: 560px; 
 }
 
-#NtesModuleTimeline ul {
+#timeline ul {
   margin-bottom: 0px;
 }
 
-#NtesModuleTimeline h3 { 
+#timeline h3 { 
   font-size: 3em; 
   margin-bottom: 5px; 
   text-align: center;
   font-weight: bold; 
 }
 
-#NTEStimelineHandler { 
+#timeline-handler { 
   height: 60px; 
   position: relative; 
 }
 
-#NTEStimelineHandler #line {
+#timeline #line {
   position: absolute;
-  height: 6px;
+  height: 15px;
   width: 100%;
   bottom: 0px;
   background-color: #999;
@@ -1472,12 +1467,12 @@ a:hover.portfolio-link {
   border-radius:3px;
 }
 
-#NTEStimelineHandler li { 
+#timeline-handler li { 
   display: inline; 
   list-style: none; 
 }
 
-#NTEStimelineHandler span { 
+#timeline-handler span { 
   visibility: hidden; 
   position: absolute; 
   width:68px; 
@@ -1490,22 +1485,22 @@ a:hover.portfolio-link {
   background: url(../images/bg_timeline.png) no-repeat -58px 0px;
 }
   
-#NTEStimelineHandler b { 
+#timeline-handler b { 
   display: inline-block; 
   position: absolute; 
-  height: 18px; 
-  width: 18px; 
+  height: 36px; 
+  width: 36px; 
   bottom: -6px; 
 }
 
-#NtesModuleTimelineContainer { 
+#timeline-container { 
   height: 500px;
   overflow: hidden; 
   position: relative; 
   text-shadow:0 1px 0 #eee;
 }
 
-#NtesModuleTimelineContainer div {  
+#timeline-container div {  
   position: absolute; 
   top: 10px; 
   width: 490px; 
@@ -1519,9 +1514,10 @@ a:hover.portfolio-link {
   border-bottom: 1px solid #333;
 }
 
-#NtesModuleTimelineContainer  li { 
+#timeline-container  li { 
   line-height: 1.5em;
   margin:4px 8px;
+  font-size:1.2em;
 }
 
 .NTEStimelineOff , .NTEStimelineOn {  
@@ -1532,7 +1528,7 @@ a:hover.portfolio-link {
   background-position: -18px 0; 
 }
 
-#NTEStimelinePointer { 
+#timeline-pointer { 
   visibility:hidden;
   top:49px;
   position:absolute; 

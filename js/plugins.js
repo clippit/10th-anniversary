@@ -204,12 +204,12 @@ var Cufon=(function(){var m=function(){return m.replace.apply(null,arguments)};v
 
 function NTEStimeline(){
   var doc=document,indicator=arguments.callee,that=this;
-  that.parent=doc.getElementById('NtesModuleTimeline'),
-  that.hand=doc.getElementById('NTEStimelineHandler'),
+  that.parent=doc.getElementById('timeline'),
+  that.hand=doc.getElementById('timeline-handler'),
   that.handler=that.hand.getElementsByTagName('b'),
   that.date=that.hand.getElementsByTagName('span'),
-  that.container=doc.getElementById('NtesModuleTimelineContainer'),
-  that.pointer=doc.getElementById('NTEStimelinePointer');
+  that.container=doc.getElementById('timeline-container'),
+  that.pointer=doc.getElementById('timeline-pointer');
   !indicator.cache&&(indicator.cache=[[],[],[]]);
   if(that.container.children.length!==that.handler.length)
     return false;
