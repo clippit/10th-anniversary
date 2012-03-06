@@ -25,3 +25,14 @@ Ruby这个玩意在Windows下简直就是杯具。首先可以去[RubyInstaller]
     export LANG=zh_CN.utf8
 
 保存后可以`source ~/.bashrc`，也可以关掉窗口重新打开。这时候再生成页面应该就不会有问题了。
+
+# Some magics about `rake`
+
+已经预定义了几个`rake`指令：
+
+* `rake`: 启动jekyll服务器并自动监视文件更新
+* `rake build`: 构建网站
+* `rake deploy`: 部署网站到远程服务器
+* `rake all`: 构建并部署
+
+注意：需要在本地创建RSA密钥对并且`ssh-copy-id`至服务器后方可免密码部署。
