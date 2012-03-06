@@ -410,14 +410,25 @@ slider:
   <!-- /section header -->
   <!-- section content -->
   <div class="content clearfix">
-    <div class="col col-1-2">
-      {% for post in site.categories.announcement%}
-      {{  post.title }}
-      {% endfor %}
-      院友系统是。。。。。。。。。。。。。。。。。。。。。。。
+    <div id="login_left" class="col col-2-3">
+      <img id="login_logo"  src="assets/register.png"/>
     </div>
-    <div class="col col-1-2 last">
-      <a href="#" class="button-big">立即注册</a>
+    <div class="col col-1-3 last">
+      <form id="login" action="anniversaryconfirm" method="post">
+        <h3>邮箱</h3>
+        <div class="rf-item input clearfix">
+          <input id="email-input" type="text" placeholder="请输入邮箱" name="username" >
+          <span id="email-postfix">@software.nju.edu.cn</span>
+        </div>
+        <h3>密码</h3>
+        <div class="rf-item input">
+          <input type="password" name="password" placeholder="请输入密码">
+        </div>
+        <div class="rf-submit">
+          <input type="submit" class="submit rf-send" value="参加院庆">
+          <span class="rf-message"><a href="#">忘记帐号密码？</a></span> 
+        </div>
+      </form>
     </div>
   </div>
   <!-- /section content -->
