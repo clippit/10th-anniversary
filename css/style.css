@@ -937,6 +937,16 @@ ul#menu ul ul { position:absolute; left:100%; top:-1px; width: 100%; z-index:2; 
   z-index:1;
 }
 
+/* no-js fallback */
+.no-js .rs-content {
+  overflow: scroll;
+}
+
+.no-js .rs-slide {
+  position: relative;
+  display:block;
+}
+
 /* Image */
 .rs-image { 
   z-index:2;
