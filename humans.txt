@@ -1,14 +1,14 @@
 ---
 team:
-  - name: Jianjun Leung
-    contact: leungjianjun [at] gmail.com
-    twitter:
-  - name: Letian Zhang
+  - name: Letian "Clippit" Zhang
     contact: zlthooray [at] gmail.com
     twitter: "@clipppit"
   - name: Yiming Tang
     contact: yimingnju [at] gmail.com
     twitter: "@krafttuc"
+  - name: Jianjun Leung
+    contact: leungjianjun [at] gmail.com
+    twitter:
 ---
 
 /* TEAM */{% for member in page.team %}
@@ -16,6 +16,11 @@ team:
   Contact: {{ member.contact }}{% if member.twitter %}
   Twitter: {{ member.twitter }}{% endif %}
   {% endfor %}
+
+/* THANKS */
+  jQuery One Page Navigation Plugin: http://trevordavis.net/blog/jquery-one-page-navigation-plugin
+  Markdown-CSS: https://github.com/clownfart/Markdown-CSS
+  Hypax - One Page Portfolio
 
 /* SITE */
   Standards: HTML5, CSS3
