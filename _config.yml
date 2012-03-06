@@ -13,6 +13,7 @@ include:
 
 exclude:
  - README.md
+ - Rakefile
  - jquery.googlemaps1.01.js
  - jquery.masonry.min.js
  - jquery.R-Forms.js
@@ -20,3 +21,5 @@ exclude:
  - RSlider.js
  - PTSansNarrow_400.js
  - msyh.font.js
+ - logo.psd
+ - view-projects-btn.psd

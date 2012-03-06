@@ -6,9 +6,9 @@ title: 教材建设
 
 ## {{  page.title  }}
 
-<a href="{{  site.baseurl  }}assets/achivement_textbooks.jpg" data-gal="lightbox" title="教材建设"><img src="{{  site.baseurl  }}assets/achivement_textbooks_thumb.jpg" class="aligncenter frame" /></a>
+<a href="{{  site.baseurl  }}assets/achivement_textbooks.jpg" data-gal="lightbox" title="教材建设"><img src="{{  site.baseurl  }}assets/achivement_textbooks_thumb.jpg" class="aligncenter frame" alt="" /></a>
 
-<table border="1" cellspacing="0" cellpadding="0">
+<table border="1">
   <tr>
     <th>教材名称</th>
     <th>作者</th>

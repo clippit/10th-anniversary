@@ -1,0 +1,12 @@
+---
+news_list:
+  - 2012年3月8日，南京大学软件学院10周年院庆网站正式上线运行。
+---
+
+<div id="news-bubbles">
+  <ul>
+    {% for news in page.news_list %}
+    <li class="{% cycle 'odd', 'even' %}">{{  news  }}</li>
+    {% endfor %}
+  </ul>
+</div>

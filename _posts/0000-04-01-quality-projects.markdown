@@ -6,7 +6,7 @@ title: 教育部质量工程项目
 
 ## {{  page.title  }}
 
-<table border="1" cellspacing="0" cellpadding="0">
+<table border="1">
   <tr>
     <th>项目名称</th>
     <th>项目类别</th>
@@ -20,7 +20,7 @@ title: 教育部质量工程项目
   <tr>
     <td>软件工程：嵌入式软件（TS2202）</td>
     <td>特色专业</td>
-    <td>2007</strong></td>
+    <td>2007</td>
   </tr>
   <tr>
     <td>软件工程：服务计算（TS2203）</td>

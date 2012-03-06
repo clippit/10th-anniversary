@@ -6,7 +6,7 @@ title: 精品课程
 
 ## {{  page.title  }}
 
-<table border="1" cellspacing="0" cellpadding="0">
+<table border="1">
   <tr>
     <th>类别</th>
     <th>课程</th>
