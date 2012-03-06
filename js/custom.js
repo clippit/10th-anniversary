@@ -292,6 +292,6 @@ jQuery(document).ready(function () {
     textShadow: '#EEE 1px 1px;',
     color: '-linear-gradient(#333, #555)'
   });
-  
+ 
 /* End custom scripts */
 });
