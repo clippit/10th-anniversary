@@ -33,6 +33,8 @@ slider:
    caption_content:
    effect: fold
 
+login: "http://218.94.159.105:8080/yuanyou/anniversaryconfirm"
+
 ---
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh"> <![endif]-->
@@ -364,7 +366,7 @@ slider:
       <img id="login_logo"  src="assets/register.png"/>
     </div>
     <div class="col col-1-3 last">
-      <form id="login" action="anniversaryconfirm" method="post">
+      <form id="login" action="{{  page.login  }}" method="post">
         <h3>邮箱</h3>
         <div class="rf-item input clearfix">
           <input id="email-input" type="text" placeholder="请输入邮箱" name="username" >
