@@ -11,7 +11,7 @@ team:
     twitter:
 ---
 
-/* TEAM */{% for member in page.team %}
+/* TEAM (undergraduate available for hiring :D)*/{% for member in page.team %}
   {{ member.name }}
   Contact: {{ member.contact }}{% if member.twitter %}
   Twitter: {{ member.twitter }}{% endif %}
@@ -20,7 +20,8 @@ team:
 /* THANKS */
   jQuery One Page Navigation Plugin: http://trevordavis.net/blog/jquery-one-page-navigation-plugin
   Markdown-CSS: https://github.com/clownfart/Markdown-CSS
-  Hypax - One Page Portfolio
+  Hypax - One Page Portfolio: http://rascals.eu/
+  Lovely website icons pack 2: http://artdesigner.lv/archives/282
 
 /* SITE */
   Standards: HTML5, CSS3
@@ -28,3 +29,4 @@ team:
   Software: Sublime Text 2, jekyll, git, Photoshop
   Language: Simplified Chinese
   Last update: {{ site.time }}
+  GitHub: https://github.com/clippit/10th-anniversary
