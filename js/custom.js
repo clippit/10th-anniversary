@@ -100,24 +100,24 @@ jQuery(document).ready(function () {
   download_hover.init();
 
   
-  /* Achivement
+  /* Achievement
    ------------------------------------------------------------------------*/
    
   /* Show first article */
-  jQuery('.achivement-article:eq(0)').show();
+  jQuery('.achievement-article:eq(0)').show();
   
-  /* Add active class to first achivement item */
-  jQuery('.achivement-list li:first-child').addClass('active');
+  /* Add active class to first achievement item */
+  jQuery('.achievement-list li:first-child').addClass('active');
   
-  /* achivement list click event */
-  jQuery('.achivement-list li a').click(function(e){
+  /* achievement list click event */
+  jQuery('.achievement-list li a').click(function(e){
     e.preventDefault();
     var $li = jQuery(this).parent();
     if (!$li.is('.active')) {
       var index = $li.index();
-      jQuery('.achivement-list li.active').removeClass('active');
-      jQuery('.achivement-article').hide();
-      jQuery('.achivement-article:eq('+ index +')').fadeIn(400, function(){
+      jQuery('.achievement-list li.active').removeClass('active');
+      jQuery('.achievement-article').hide();
+      jQuery('.achievement-article:eq('+ index +')').fadeIn(400, function(){
         if (jQuery.browser.msie){
           this.style.removeAttribute('filter');
         }

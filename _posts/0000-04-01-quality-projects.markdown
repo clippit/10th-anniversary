@@ -1,6 +1,6 @@
 ---
 layout: nil
-category: achivement
+category: achievement
 title: 教育部质量工程项目
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: nil
-category: achivement
+category: achievement
 title: 本科教学工程
 ---
 

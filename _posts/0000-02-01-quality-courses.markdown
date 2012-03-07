@@ -1,6 +1,6 @@
 ---
 layout: nil
-category: achivement
+category: achievement
 title: 精品课程
 ---
 

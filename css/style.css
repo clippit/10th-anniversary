@@ -999,11 +999,11 @@ a:hover.download-link {
   border-bottom:1px solid #999;
 }
 
-/* Achivements
+/* Achievements
  ------------------------------------------------------------------------*/
  
-/* Achivements list */
-.achivement-list {
+/* Achievements list */
+.achievement-list {
   overflow:hidden;
   width:100%;
   height:auto;
@@ -1011,37 +1011,37 @@ a:hover.download-link {
   margin-bottom:20px;
   z-index:2;
 }
-.achivement-list-top {
+.achievement-list-top {
   width:288px;
   height:22px;
   background:transparent url(../images/news-list-top.png) left top no-repeat;
 }
-.achivement-container {
+.achievement-container {
   overflow:hidden;
   width:100%;
   z-index:1;
 }
-.achivement-list ul {
+.achievement-list ul {
   left:0;
   top:0;
   height:100%;
   width:100%;
 }
-.achivement-list ul li {
+.achievement-list ul li {
   width:288px;
   height:65px;
   cursor:pointer;
   background:transparent url(../images/news-list-item.png) left top no-repeat;
 }
-.achivement-list li:hover {
+.achievement-list li:hover {
   background:transparent url(../images/news-list-item.png) left -65px no-repeat;
 }
-.achivement-list li:hover .active, .achivement-list .active {
+.achievement-list li:hover .active, .achievement-list .active {
   width:288px;
   height:65px;
   background:transparent url(../images/news-list-item.png) left bottom no-repeat    !important;
 }
-.achivement-list a{
+.achievement-list a{
   font-size: 1.2em;
   display: block;
   color: #ddd;
@@ -1049,10 +1049,10 @@ a:hover.download-link {
   margin:0;
   text-decoration: none;
 }
-.achivement-list .active a {
+.achievement-list .active a {
   color: #fff;
 }
-.achivement-list-footer {
+.achievement-list-footer {
   margin-top:-38px;
   width:288px;
   height:136px;
@@ -1062,12 +1062,12 @@ a:hover.download-link {
   background:transparent url(../images/news-list-footer.png) left top no-repeat;
 }
 
-.lt-ie8 .achivement-list li {
+.lt-ie8 .achievement-list li {
   margin: -3px 0 -3px 0;
 }
 
-/* Achivements articles */
-.achivement-article { display:none; }
+/* Achievements articles */
+.achievement-article { display:none; }
 
 
 /*  Timeline   

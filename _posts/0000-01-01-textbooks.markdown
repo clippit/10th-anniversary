@@ -1,12 +1,12 @@
 ---
 layout: nil
-category: achivement
+category: achievement
 title: 教材建设
 ---
 
 ## {{  page.title  }}
 
-<a href="{{  site.baseurl  }}assets/achivement_textbooks.jpg" data-gal="lightbox" title="教材建设"><img src="{{  site.baseurl  }}assets/achivement_textbooks_thumb.jpg" class="aligncenter frame" alt="" /></a>
+<a href="{{  site.baseurl  }}assets/achievement_textbooks.jpg" data-gal="lightbox" title="教材建设"><img src="{{  site.baseurl  }}assets/achievement_textbooks_thumb.jpg" class="aligncenter frame" alt="" /></a>
 
 <table border="1">
   <tr>

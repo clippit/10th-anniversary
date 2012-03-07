@@ -84,7 +84,7 @@ slider:
       <li class="current"><a href="#top-page">首页</a></li>
       <li><a href="#announcement">院庆公告</a></li>
       <li><a href="#news">交流动态</a></li>
-      <li><a href="#achivement">成果展示</a></li>
+      <li><a href="#achievement">成果展示</a></li>
       <li><a href="#history">软院纪略</a></li>
       <li><a href="#download">相关下载</a></li>
       <li><a href="#register">院友注册</a></li>
@@ -192,8 +192,8 @@ slider:
   <!-- clearfix -->
   <div class="clearfix"></div>
   <!-- section anchor -->
-  <div class="section-anchor" id="achivement"></div>
-  <!-- achivement section -->
+  <div class="section-anchor" id="achievement"></div>
+  <!-- achievement section -->
   <section class="section">
   <div class="section-line"></div>
   <!-- section header -->
@@ -205,41 +205,41 @@ slider:
   <div class="content clearfix">
     <!-- column 1 -->
     <div class="col col-1-3">
-      <!-- achivement list -->
-      <div class="achivement-list">
-        <div class="achivement-list-top"></div>
-        <div class="achivement-container">
+      <!-- achievement list -->
+      <div class="achievement-list">
+        <div class="achievement-list-top"></div>
+        <div class="achievement-container">
           <ul>
-            {% for post in site.categories.achivement %}
+            {% for post in site.categories.achievement %}
             <li>
               <a href="{{  post.url  }}">{{  post.title  }}</a>
             </li>
             {% endfor %}
           </ul>
         </div>
-        <div class="achivement-list-footer"></div>
+        <div class="achievement-list-footer"></div>
       </div>
-      <!-- /achivement list -->
+      <!-- /achievement list -->
     </div>
     <!-- /column 1 -->
     <!-- column 2 -->
     <div class="col col-2-3 last">
-      <!-- achivement articles -->
-      <div class="achivement-articles">
-        {% for post in site.categories.achivement %}
-        <div class="achivement-article text">
+      <!-- achievement articles -->
+      <div class="achievement-articles">
+        {% for post in site.categories.achievement %}
+        <div class="achievement-article text">
           {{  post.content  }}
         </div>
         {% endfor %}
       </div>
-      <!-- /achivement articles -->
+      <!-- /achievement articles -->
     </div>
     <!-- /column 2 -->
   </div>
   <!-- /section content -->
   <div class="section-line"></div>
   </section>
-  <!-- /achivement section -->
+  <!-- /achievement section -->
   <!-- clearfix -->
   <div class="clearfix"></div>
   <!-- section anchor -->
