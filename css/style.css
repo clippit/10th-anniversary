@@ -1245,6 +1245,9 @@ a:hover#view-projects-btn { background:transparent url(../images/view-projects-b
   height:100%;
   z-index:2;
 }
+.no-js .download-content {
+  left:0;
+}
 .download-content h2 {
   font-size:24px;
   color:#fff;
