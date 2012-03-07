@@ -3,6 +3,9 @@ description: "南京大学软件学院成立十周年。2002-2012"
 keywords: [南京大学, 软件学院, 十周年, 院庆]
 baseurl: /
 
+login_submit: "http://218.94.159.105:8080/yuanyou/anniversaryconfirm"
+lost_password: "http://218.94.159.105:8080/yuanyou/"
+
 permalink: none
 markdown: rdiscount
 pygments: false
