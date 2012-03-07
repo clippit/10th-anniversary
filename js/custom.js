@@ -52,19 +52,7 @@ jQuery(document).ready(function () {
   
   /* Init PrettyPhoto */
   prettyphoto();
-  
-  
-  /* Google Maps
-   ------------------------------------------------------------------------*/
-  // jQuery('#gmap').googleMaps({
-  //   latitude: 52.263301,
-  //   longitude: 21.028317,
-  //   markers: {
-  //     latitude: 52.263301,
-  //     longitude: 21.028317
-  //   }
-  // });
-  
+    
   
   /* Sliders
    ------------------------------------------------------------------------*/
@@ -93,111 +81,6 @@ jQuery(document).ready(function () {
     jQuery('.rs-prev',this).stop().animate({ left : '-68px'}, { queue: false, duration: 450, easing: 'easeOutQuint' });
   });
   
-  
-  /* Portfolio
-   ------------------------------------------------------------------------*/
-  
-  // jQuery('.portfolio-grid').parent().each(function(){
-                      
-  //   var
-  //     speed = 750,  // animation speed
-  //     container = jQuery(this),
-  //     filter_efx = jQuery('.portfolio-grid', container).data('filter-efx'),
-  //     portfolio_grid = jQuery('.portfolio-grid', container);
-      
-  //     if (filter_efx === undefined || filter_efx === '') filter_efx  = 'hide';
-  //     else filter_efx = filter_efx;
-      
-  //   /* Add active class to first navigation item */
-  //   jQuery('.portfolio-nav li:first-child a', container).addClass('active');
-    
-  //   if (jQuery('.portfolio-nav li', container).size() > 0) var first_class = jQuery('.portfolio-nav li:first-child a', container).attr('class').split(' ')[0];
-    
-  //   portfolio_grid.masonry({
-  //     columnWidth: 246, // Column width 222px + margin right 24px
-  //     singleMode: true,
-  //     resizeable: false,
-  //     /* only apply masonry layout to visible elements */
-  //     itemSelector: '.grid-item:not(.invis)',
-  //     animate: true,
-  //     animationOptions: {
-  //       easing: 'easeOutQuad',
-  //       duration: speed,
-  //       queue: false
-  //     }
-  //   });
-    
-  //   /* Show items only with first category */
-  //   if (first_class != 'all') {
-  //     if (filter_efx == 'hide') {
-  //       jQuery('.grid-item:not(.'+first_class+')', portfolio_grid).addClass('invis').hide();
-  //       portfolio_grid.masonry();
-  //     } else {
-  //       jQuery('.grid-item:not(.'+first_class+')', portfolio_grid).addClass('invis').animate({opacity : .1},speed);
-  //     }
-  //   }
-    
-  //   /* projects navigation action */
-  //   jQuery('.portfolio-nav li a', container).click(function(){
-                          
-  //     /* Remove .active class from projects navigation */
-  //     jQuery('.portfolio-nav li a', container).removeClass('active');
-  //     var project_cat = '.' + jQuery(this).attr('class');
-      
-  //     if (project_cat == '.all') {
-  //       /* Show all hidden boxes */
-  //       var el = portfolio_grid.children('.invis').toggleClass('invis');
-  //       if (filter_efx == 'hide') {
-  //         el.fadeIn(speed);
-          
-  //         /* Run masonry class */
-  //         portfolio_grid.masonry();
-  //       } else {
-  //         el.animate({opacity : 1},speed);
-  //       }
-  //     } else {
-  //       var hide_el = portfolio_grid.children().not(project_cat).not('.invis').toggleClass('invis');
-  //       var show_el = portfolio_grid.children(project_cat+'.invis').toggleClass('invis');
-        
-  //       if (filter_efx == 'hide') {
-  //         /* Hide visible boxes */
-  //         hide_el.fadeOut(speed);
-  //         /* Show hidden boxes */
-  //         show_el.fadeIn(speed);
-  //         /* Run masonry class */
-  //         portfolio_grid.masonry();
-          
-  //       } else {
-  //         /* Hide visible boxes */
-  //         hide_el.animate({opacity : .1},speed);
-  //         /* Show hidden boxes */
-  //         show_el.animate({opacity : 1},speed);
-  //       }
-        
-  //     }
-
-  //     /* Add .active class to projects navigation */
-  //     jQuery(this).addClass('active');
-  //     return false;
-  //   });
-  
-  //   /* Hover effect */
-  //   var portfolio_hover = {
-  //     init : function() {
-  //         var el = jQuery('.portfolio-item', container);
-  //         el.hover(function(){
-  //           jQuery('.portfolio-hover', this).stop().fadeTo(600, 0.70);
-  //           jQuery('.portfolio-content', this).css('left', '-222px');
-  //           jQuery('.portfolio-content', this).stop().animate({ left : '0px'}, { queue: false, duration: 450, easing: 'easeOutQuint' })
-  //         }, function(){
-  //           jQuery('.portfolio-hover', this).stop().fadeTo(800, 0);
-  //           jQuery('.portfolio-content', this).stop().animate({ left : '222px'}, { queue: false, duration: 300, easing: 'easeOutQuint' })
-  //         })
-  //       }
-  //   }
-  //   portfolio_hover.init();
-  
-  // });
 
   /* Download Hover Effect
    ------------------------------------------------------------------------*/
@@ -207,13 +90,13 @@ jQuery(document).ready(function () {
         el.hover(function(){
           jQuery('.download-hover', this).stop().fadeTo(600, 0.70);
           jQuery('.download-content', this).css('left', '-222px');
-          jQuery('.download-content', this).stop().animate({ left : '0px'}, { queue: false, duration: 450, easing: 'easeOutQuint' })
+          jQuery('.download-content', this).stop().animate({ left : '0px'}, { queue: false, duration: 450, easing: 'easeOutQuint' });
         }, function(){
           jQuery('.download-hover', this).stop().fadeTo(800, 0);
-          jQuery('.download-content', this).stop().animate({ left : '222px'}, { queue: false, duration: 300, easing: 'easeOutQuint' })
-        })
+          jQuery('.download-content', this).stop().animate({ left : '222px'}, { queue: false, duration: 300, easing: 'easeOutQuint' });
+        });
       }
-  }
+  };
   download_hover.init();
 
   
@@ -243,32 +126,7 @@ jQuery(document).ready(function () {
     }
   });
   
-  
-  /* About
-   ------------------------------------------------------------------------*/
-  
-  /* Slider */
-  jQuery('#about-slider').RSlider({
-                   delay      : 0,
-                   duration     : 1000,
-                   height     : 192,
-                   width      : 624,
-                   slices     : 6,
-                   easing     : 'easeOutExpo',
-                   pause_on_hover : true
-                   });
-  
-  
-  /* Accordion
-   ------------------------------------------------------------------------*/
-  jQuery('.accordion').RAccordion({element : 'li'});
-  
-  
-  /* Toggle
-   ------------------------------------------------------------------------*/
-  jQuery('.toggle').RToggle({toggle_switch : '.switch'});
-   
-  
+ 
   /* Helper Functions
    ------------------------------------------------------------------------*/
    
@@ -287,12 +145,6 @@ jQuery(document).ready(function () {
    },function() {
     jQuery(this).stop().animate({ width: '222px', height: '256px', left: '0px', top: '0px'}, 500);
    });
-  
-  /* Tooltip */
-  // jQuery('.tip').tipsy({
-  //   fade : true,
-  //   gravity: 's'
-  // });
   
   
   /* Cufon Fonts
