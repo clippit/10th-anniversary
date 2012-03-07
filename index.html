@@ -294,26 +294,7 @@ slider:
   <!-- /section header -->
   <!-- section content -->
   <div class="content clearfix">
-    <div id="login_left" class="col col-2-3">
-      <img id="login_logo"  src="assets/register.png"/>
-    </div>
-    <div class="col col-1-3 last">
-      <form id="login" action="{{  site.login_submit  }}" method="post">
-        <h3>邮箱</h3>
-        <div class="rf-item input clearfix">
-          <input id="email-input" type="text" placeholder="请输入邮箱" name="username" >
-          <span id="email-postfix">@software.nju.edu.cn</span>
-        </div>
-        <h3>密码</h3>
-        <div class="rf-item input">
-          <input type="password" name="password" placeholder="请输入密码">
-        </div>
-        <div class="rf-submit">
-          <input type="submit" class="submit rf-send" value="参加院庆">
-          <span class="rf-message"><a href="{{  site.lost_password  }}" target="_blank">忘记帐号密码？</a></span> 
-        </div>
-      </form>
-    </div>
+    {% include register.html %}
   </div>
   <!-- /section content -->
   <div class="section-line"></div>
