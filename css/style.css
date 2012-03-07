@@ -1437,9 +1437,8 @@ a:hover.portfolio-link {
 ----------------------------------------------------------- */
 #timeline {
   width: 960px;
-  height: 400px;
   overflow: hidden;
-  margin: 100px auto;
+  margin: 0 auto;
   position: relative;
   background: url('../images/dot.gif') left 45px repeat-x;
 }
@@ -1463,6 +1462,11 @@ a:hover.portfolio-link {
   color:#444;
   font-weight:bold;
   padding-bottom: 10px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
 }
 
 #dates .selected {
@@ -1471,34 +1475,36 @@ a:hover.portfolio-link {
 
 #issues {
   width:960px;
-  height: 400px;
   overflow: hidden;
 } 
 
 #issues>li {
   width:960px;
-  height: 400px;
   list-style: none;
   float: left;
-  
 }
 
 #issues>li ul{
-  width:600px;
-  margin:20px 100px;
+  margin:20px 200px;
 }
 
 #issues>li h3 {
-  margin-left:200px;
-  color: #ffcc00;
-  font-size: 48px;
-  text-shadow: #000 1px 1px 2px;
+  font-weight: bold;
+  margin-left: 200px;
+  color: #9B3A2D;
+  font-size: 4em;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 2px;
+}
+
+#issues>li ul li{
+  font-size:1.2em;
+  text-shadow: 0 1px 0 #EEE;
 }
 
 #grad_left,
 #grad_right {
-  width: 100px;
-  height: 400px;
+  width: 150px;
+  height:100%;
   position: absolute;
   top: 0;
 }
@@ -1523,6 +1529,13 @@ a:hover.portfolio-link {
   background-repeat: no-repeat;
   text-indent: -9999px;
   overflow: hidden;
+  color: #FFC;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
 }
 
 #next:hover,
@@ -1530,11 +1543,11 @@ a:hover.portfolio-link {
   background-position: 0 -76px;
 }
 #next {
-  right: 0;
+  right: 70px;
   background-image: url('../images/next.png');
 }
 #prev {
-  left: 0;
+  left: 70px;
   background-image: url('../images/prev.png');
 }
 #next.disabled,

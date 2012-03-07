@@ -69,7 +69,7 @@ history:
   <!-- issues -->
   <ul id="issues">
     {% for one_year in page.history %}
-    <li id="one_year.year">
+    <li id="{{  one_year.year  }}">
       <h3>{{  one_year.year  }} 年</h3>
       <ul class="bullet-list-orange">
         {% for story in one_year.content %}

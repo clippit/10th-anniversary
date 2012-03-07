@@ -229,7 +229,7 @@ jQuery(document).ready(function () {
      autoPlay: 'false',
      issuesTransparency: 1
   });
-  
+
   /* About
    ------------------------------------------------------------------------*/
   
