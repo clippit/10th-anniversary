@@ -241,6 +241,7 @@ jQuery(document).ready(function () {
                    });
   
   
+
   /* Accordion
    ------------------------------------------------------------------------*/
   jQuery('.accordion').RAccordion({element : 'li'});
@@ -292,6 +293,15 @@ jQuery(document).ready(function () {
     textShadow: '#EEE 1px 1px;',
     color: '-linear-gradient(#333, #555)'
   });
+
+
+  jQuery('#timeline').timelinr(
+     {
+       autoPlay: 'false',
+       issuesTransparency: 1
+     }
+    );
  
 /* End custom scripts */
+
 });

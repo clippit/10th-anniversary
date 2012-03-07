@@ -1432,116 +1432,115 @@ a:hover.portfolio-link {
 .achivement-article { display:none; }
 
 
-/* About
- ------------------------------------------------------------------------*/
- 
-
 
 /*  Timeline   
 ----------------------------------------------------------- */
-#NtesModuleTimeline {
-  position: relative; 
-  height: 560px; 
+#timeline {
+  width: 960px;
+  height: 400px;
+  overflow: hidden;
+  margin: 100px auto;
+  position: relative;
+  background: url('../images/dot.gif') left 45px repeat-x;
 }
-
-#NtesModuleTimeline ul {
-  margin-bottom: 0px;
+#dates {
+  width: 960px;
+  height: 60px;
+  overflow: hidden;
 }
-
-#NtesModuleTimeline h3 { 
-  font-size: 3em; 
-  margin-bottom: 5px; 
+#dates li {
+  list-style: none;
+  float: left;
+  width: 100px;
+  height: 50px;
+  font-size: 24px;
   text-align: center;
-  font-weight: bold; 
+  background: url('../images/biggerdot.png') center bottom no-repeat;
 }
 
-#NTEStimelineHandler { 
-  height: 60px; 
-  position: relative; 
+#dates a {
+  line-height: 38px;
+  color:#444;
+  font-weight:bold;
+  padding-bottom: 10px;
 }
 
-#NTEStimelineHandler #line {
-  position: absolute;
-  height: 6px;
-  width: 100%;
-  bottom: 0px;
-  background-color: #999;
-  -webkit-border-radius:3px;
-  -moz-border-radius:3px;
-  border-radius:3px;
+#dates .selected {
+  font-size: 38px;
 }
 
-#NTEStimelineHandler li { 
-  display: inline; 
-  list-style: none; 
-}
+#issues {
+  width:960px;
+  height: 400px;
+  overflow: hidden;
+} 
 
-#NTEStimelineHandler span { 
-  visibility: hidden; 
-  position: absolute; 
-  width:68px; 
-  height:22px; 
-  color: #FFF;
-  text-shadow:0 1px 0 #333; 
-  line-height: 20px;
-  font-size:12px;
-  text-align: center; 
-  background: url(../images/bg_timeline.png) no-repeat -58px 0px;
-}
+#issues>li {
+  width:960px;
+  height: 400px;
+  list-style: none;
+  float: left;
   
-#NTEStimelineHandler b { 
-  display: inline-block; 
-  position: absolute; 
-  height: 18px; 
-  width: 18px; 
-  bottom: -6px; 
 }
 
-#NtesModuleTimelineContainer { 
-  height: 500px;
-  overflow: hidden; 
-  position: relative; 
-  text-shadow:0 1px 0 #eee;
+#issues>li ul{
+  width:600px;
+  margin:20px 100px;
 }
 
-#NtesModuleTimelineContainer div {  
-  position: absolute; 
-  top: 10px; 
-  width: 490px; 
-  padding:10px;
-  overflow:hidden;
-  visibility: hidden;
-  background: #bbb; 
-  -webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
-  border-radius: 5px; 
-  border-bottom: 1px solid #333;
+#issues>li h3 {
+  margin-left:200px;
+  color: #ffcc00;
+  font-size: 48px;
+  text-shadow: #000 1px 1px 2px;
 }
 
-#NtesModuleTimelineContainer  li { 
-  line-height: 1.5em;
-  margin:4px 8px;
+#grad_left,
+#grad_right {
+  width: 100px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+}
+#grad_left {
+  left: 0;
+  background: url('../images/grad_left.png') repeat-y;
+}
+#grad_right {
+  right: 0;
+  background: url('../images/grad_right.png') repeat-y;
 }
 
-.NTEStimelineOff , .NTEStimelineOn {  
-  background: url(../images/bg_timeline.png) no-repeat 0px 0px; 
+#next,
+#prev {
+  position: absolute;
+  top: 0;
+  font-size: 70px;
+  top: 170px;
+  width: 22px;
+  height: 38px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
 }
 
-.NTEStimelineOn { 
-  background-position: -18px 0; 
+#next:hover,
+#prev:hover {
+  background-position: 0 -76px;
 }
-
-#NTEStimelinePointer { 
-  visibility:hidden;
-  top:49px;
-  position:absolute; 
-  display:inline-block; 
-  width:12px; 
-  height:8px; 
-  background:url(../images/bg_timeline.png) no-repeat -40px 0px; 
-  top:63px;  
+#next {
+  right: 0;
+  background-image: url('../images/next.png');
 }
-
+#prev {
+  left: 0;
+  background-image: url('../images/prev.png');
+}
+#next.disabled,
+#prev.disabled {
+  opacity: 0.2;
+}
 
 /* Contact
  ------------------------------------------------------------------------*/

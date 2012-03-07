@@ -194,127 +194,203 @@ var Cufon=(function(){var m=function(){return m.replace.apply(null,arguments)};v
 
 })(jQuery);
 
+/* ----------------------------------
+jQuery Timelinr 0.9.5
+tested with jQuery v1.6+
 
-/* 
- * Timeline  
- * from 163 news
- *
- * 
- */
+Copyright 2011, CSSLab.cl
+Free under the MIT license.
+http://www.opensource.org/licenses/mit-license.php
 
-function NTEStimeline(){
-  var doc=document,indicator=arguments.callee,that=this;
-  that.parent=doc.getElementById('NtesModuleTimeline'),
-  that.hand=doc.getElementById('NTEStimelineHandler'),
-  that.handler=that.hand.getElementsByTagName('b'),
-  that.date=that.hand.getElementsByTagName('span'),
-  that.container=doc.getElementById('NtesModuleTimelineContainer'),
-  that.pointer=doc.getElementById('NTEStimelinePointer');
-  !indicator.cache&&(indicator.cache=[[],[],[]]);
-  if(that.container.children.length!==that.handler.length)
-    return false;
-  !this.parseDate&&(indicator.prototype.parseDate=function(){
-    var i=0,len=that.handler.length,temp=[];
-    for(;i<len;){
-      var elem=that.handler[i],date=new Function('return'+('['+that.date[i].innerHTML.replace(/\./gi,',')+']'))();
-      that[i]=+new Date(date[0],0,1);
-      that.length=i;
-      elem.style.left='';
-      void function(j,o){
-        that.addEvent(o,'mouseover',function(){that.activity.call(o,j);
-      },false);
-      }(i++,elem);
-    };return that;
-  });
-  indicator.prototype.locateHandler=function(){
-    var referTime=(that[that.length]-that[0])/86400000,i=0,len=that.handler.length,temp=0;
-    for(;i<len;){
-      temp=((that[i]-that[0])/(referTime*86400000))*that.parent.offsetWidth;
-      that.fx(that.handler[i],'left',((i===len-1||i===0)?temp-20:temp),50);i++;
-    }
-  };
-  indicator.prototype.Linear=function(t,b,c,d){
-    if((t/=d)<(1/2.75)){
-      return c*(7.5625*t*t)+b;
-    }else if(t<(2/2.75)){
-      return c*(7.5625*(t-=(1.5/2.75))*t+.75)+b;
-    }else if(t<(2.5/2.75)){
-      return c*(7.5625*(t-=(2.25/2.75))*t+.9375)+b;
-    }else{
-      return c*(7.5625*(t-=(2.625/2.75))*t+.984375)+b;
-    }
-  };
-  indicator.prototype.fx=function(o,property,c,d){
-    var b=0,c=c||50,d=d||100,t=0,k=0,j=10,i=0;
-    void function(){
-      o.style[property]=Math.ceil(that.Linear(t,b,c,d))+'px';
-      if(parseInt(o.style[property])<c){
-        t++;
-        setTimeout(arguments.callee,10);
-      };
-    }();
-  };
-  indicator.prototype.activity=function(index){
-    var slice=Array.prototype.slice,date=that.date,span=date[index],container=that.container,div=container.children[index],rect=that.getClinetRect(this),limit=that.getClinetRect(that.container);
-    !indicator.cache[0][index]&&(indicator.cache[0][index]='visibility:visible;left:'+(parseInt(this.style.left)-date[0].offsetWidth/2+this.offsetWidth/2+'px'));
-    if(!indicator.cache[1][index]){
-      if((rect.left-div.offsetWidth/2)<limit.left){
-        indicator.cache[1][index]='visibility:visible;left:0px;';
-      }else if((rect.left+div.offsetWidth/2)>limit.right){
-        indicator.cache[1][index]='visibility:visible;left:'+(limit.right-div.offsetWidth-limit.left)+'px;';
-      }else{
-        indicator.cache[1][index]='visibility:visible;left:'+(rect.left-div.offsetWidth/2-limit.left)+'px;';
-      };
-    };
-    !indicator.cache[2][index]&&(indicator.cache[2][index]=('visibility:visible;left:'+(parseInt(this.style.left)-that.pointer.offsetWidth/2+this.offsetWidth/2)+'px; z-index:60;'));
-    that.off.call(this,index);this.className='NTEStimelineOn';
-    span.style.cssText=indicator.cache[0][index];that.fx(span,'top',15,80);
-    !window.ActiveXObject&&(that.fadeIn.call(span,10),that.fadeIn.call(div,10));
-    div.style.cssText=indicator.cache[1][index];
-    that.pointer.style.cssText=indicator.cache[2][index];
-  };
-  indicator.prototype.off=function(index){
-    var i=0,len=that.handler.length;
-    for(;i<len;){
-      if(i!==index){
-        that.date[i].style.visibility='hidden',that.container.children[i].style.visibility='hidden';
-        that.handler[i].className='NTEStimelineOff';
-      }
-      i++;
-    };
-  };
-  indicator.prototype.getClinetRect=function(elem){
-    var result=elem.getBoundingClientRect(),temp=(temp={left:result.left,right:result.right,top:result.top,bottom:result.bottom,height:(result.height?result.height:(result.bottom-result.top)),width:(result.width?result.width:(result.right-result.left))});
-    return temp;
-  };
-  indicator.prototype.fadeIn=function(steps,fn){
-    that.doFade.call(this,steps/10,0,true,fn);
-  };
-  indicator.prototype.doFade=function(steps,value,action,fn){
-    var ie=undefined!==window.ActiveXObject,calls=arguments.callee,t=this,step;
-    value+=(action?1:-1)/steps,(action?value>1:value<0)&&(value=action?1:0),ie===true?t.style.filter='alpha(opacity='+value*100+')':t.style.opacity=value;
-    (action?value<1:value>0)&&setTimeout(function(){
-      calls.call(t,steps,value,action,fn);
-    },1000/steps);
-    (action?value===1:value===0&&'undefined'!==typeof fn)&&('function'===typeof fn&&fn.call(t));
-  };
-  indicator.prototype.addEvent=function(elem,evType,fn,capture){
-    var indicator=arguments.callee;
-    elem.attachEvent&&(indicator=function(elem,evType,fn){
-      elem.attachEvent('on'+evType,fn)}).apply(this,arguments);
-      elem.addEventListener&&(indicator=function(elem,evType,fn){
-        elem.addEventListener(evType,fn,capture||false);
-      }).apply(this,arguments);
-      elem['on'+evType]&&(indicator=function(elem,evType,fn){
-        elem['on'+evType]=function(){fn();};
-      }).apply(this,arguments);
-    };
-  indicator.prototype.trigger=function(elem,evType){
-      var event,doc=document;undefined!==doc.createEvent?(event=doc.createEvent('MouseEvents'),event.initMouseEvent(evType,true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null),elem.dispatchEvent(event)):(event=doc.createEventObject(),event.screenX=100,event.screenY=0,event.clientX=0,event.clientY=0,event.ctrlKey=false,event.altKey=false,event.shiftKey=false,event.button=false,elem.fireEvent('on'+evType,event));
-    };
-    return{init:function(index){
-      that.parseDate();that.locateHandler();that.trigger(that.handler[index],'mouseover');
-    }
-  };
+instructions: http://www.csslab.cl/2011/08/18/jquery-timelinr/
+---------------------------------- */
+(function ($) {
+
+jQuery.fn.timelinr = function(options){
+	// default plugin settings
+	settings = jQuery.extend({
+		orientation: 				'horizontal',		// value: horizontal | vertical, default to horizontal
+		containerDiv: 				'#timeline',		// value: any HTML tag or #id, default to #timeline
+		datesDiv: 					'#dates',			// value: any HTML tag or #id, default to #dates
+		datesSelectedClass: 		'selected',			// value: any class, default to selected
+		datesSpeed: 				'normal',			// value: integer between 100 and 1000 (recommended) or 'slow', 'normal' or 'fast'; default to normal
+		issuesDiv: 					'#issues',			// value: any HTML tag or #id, default to #issues
+		issuesSelectedClass: 		'selected',			// value: any class, default to selected
+		issuesSpeed: 				'fast',				// value: integer between 100 and 1000 (recommended) or 'slow', 'normal' or 'fast'; default to fast
+		issuesTransparency: 		0.2,				// value: integer between 0 and 1 (recommended), default to 0.2
+		issuesTransparencySpeed: 	500,				// value: integer between 100 and 1000 (recommended), default to 500 (normal)
+		prevButton: 				'#prev',			// value: any HTML tag or #id, default to #prev
+		nextButton: 				'#next',			// value: any HTML tag or #id, default to #next
+		arrowKeys: 					'false',			// value: true | false, default to false
+		startAt: 					1,					// value: integer, default to 1 (first)
+		autoPlay: 					'false',			// value: true | false, default to false
+		autoPlayDirection: 			'forward',			// value: forward | backward, default to forward
+		autoPlayPause: 				2000				// value: integer (1000 = 1 seg), default to 2000 (2segs)
+		
+	}, options);
+
+	$(function(){
+		// setting variables... many of them
+		var howManyDates = $(settings.datesDiv+'>li').length;
+		var howManyIssues = $(settings.issuesDiv+'>li').length;
+		var currentDate = $(settings.datesDiv).find('a.'+settings.datesSelectedClass);
+		var currentIssue = $(settings.issuesDiv).find('li.'+settings.issuesSelectedClass);
+		var widthContainer = $(settings.containerDiv).width();
+		var heightContainer = $(settings.containerDiv).height();
+		var widthIssues = $(settings.issuesDiv).width();
+		var heightIssues = $(settings.issuesDiv).height();
+		var widthIssue = $(settings.issuesDiv+'>li').width();
+		var heightIssue = $(settings.issuesDiv+'>li').height();
+		var widthDates = $(settings.datesDiv).width();
+		var heightDates = $(settings.datesDiv).height();
+		var widthDate = $(settings.datesDiv+' li').width();
+		var heightDate = $(settings.datesDiv+' li').height();
+		
+		// set positions!
+		if(settings.orientation == 'horizontal') {	
+			$(settings.issuesDiv).width(widthIssue*howManyIssues);
+			$(settings.datesDiv).width(widthDate*howManyDates).css('marginLeft',widthContainer/2-widthDate/2);
+			var defaultPositionDates = parseInt($(settings.datesDiv).css('marginLeft').substring(0,$(settings.datesDiv).css('marginLeft').indexOf('px')));
+		} else if(settings.orientation == 'vertical') {
+			$(settings.issuesDiv).height(heightIssue*howManyIssues);
+			$(settings.datesDiv).height(heightDate*howManyDates).css('marginTop',heightContainer/2-heightDate/2);
+			var defaultPositionDates = parseInt($(settings.datesDiv).css('marginTop').substring(0,$(settings.datesDiv).css('marginTop').indexOf('px')));
+		}
+		
+		$(settings.datesDiv+' a').click(function(event){
+			event.preventDefault();
+			// first vars
+			var whichIssue = $(this).text();
+			var currentIndex = $(this).parent().prevAll().length;
+
+			// moving the elements
+			if(settings.orientation == 'horizontal') {
+				$(settings.issuesDiv).animate({'marginLeft':-widthIssue*currentIndex},{queue:false, duration:settings.issuesSpeed});
+			} else if(settings.orientation == 'vertical') {
+				$(settings.issuesDiv).animate({'marginTop':-heightIssue*currentIndex},{queue:false, duration:settings.issuesSpeed});
+			}
+			$(settings.issuesDiv+' li').animate({'opacity':settings.issuesTransparency},{queue:false, duration:settings.issuesSpeed}).removeClass(settings.issuesSelectedClass).eq(currentIndex).addClass(settings.issuesSelectedClass).fadeTo(settings.issuesTransparencySpeed,1);
+			
+			// now moving the dates
+			$(settings.datesDiv+' a').removeClass(settings.datesSelectedClass);
+			$(this).addClass(settings.datesSelectedClass);
+			if(settings.orientation == 'horizontal') {
+				$(settings.datesDiv).animate({'marginLeft':defaultPositionDates-(widthDate*currentIndex)},{queue:false, duration:'settings.datesSpeed'});
+			} else if(settings.orientation == 'vertical') {
+				$(settings.datesDiv).animate({'marginTop':defaultPositionDates-(heightDate*currentIndex)},{queue:false, duration:'settings.datesSpeed'});
+			}
+		});
+
+		$(settings.nextButton).bind('click', function(event){
+			event.preventDefault();
+			if(settings.orientation == 'horizontal') {
+				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginLeft').substring(0,$(settings.issuesDiv).css('marginLeft').indexOf('px')));
+				var currentIssueIndex = currentPositionIssues/widthIssue;
+				var currentPositionDates = parseInt($(settings.datesDiv).css('marginLeft').substring(0,$(settings.datesDiv).css('marginLeft').indexOf('px')));
+				var currentIssueDate = currentPositionDates-widthDate;
+				if(currentPositionIssues <= -(widthIssue*howManyIssues-(widthIssue))) {
+					$(settings.issuesDiv).stop();
+					$(settings.datesDiv+' li:last-child a').click();
+				} else {
+					if (!$(settings.issuesDiv).is(':animated')) {
+						$(settings.issuesDiv).animate({'marginLeft':currentPositionIssues-widthIssue},{queue:false, duration:settings.issuesSpeed});
+						$(settings.issuesDiv+' li').animate({'opacity':settings.issuesTransparency},{queue:false, duration:settings.issuesSpeed});
+						$(settings.issuesDiv+' li.'+settings.issuesSelectedClass).removeClass(settings.issuesSelectedClass).next().fadeTo(settings.issuesTransparencySpeed, 1).addClass(settings.issuesSelectedClass);
+						$(settings.datesDiv).animate({'marginLeft':currentIssueDate},{queue:false, duration:'settings.datesSpeed'});
+						$(settings.datesDiv+' a.'+settings.datesSelectedClass).removeClass(settings.datesSelectedClass).parent().next().children().addClass(settings.datesSelectedClass);
+					}
+				}
+			} else if(settings.orientation == 'vertical') {
+				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginTop').substring(0,$(settings.issuesDiv).css('marginTop').indexOf('px')));
+				var currentIssueIndex = currentPositionIssues/heightIssue;
+				var currentPositionDates = parseInt($(settings.datesDiv).css('marginTop').substring(0,$(settings.datesDiv).css('marginTop').indexOf('px')));
+				var currentIssueDate = currentPositionDates-heightDate;
+				if(currentPositionIssues <= -(heightIssue*howManyIssues-(heightIssue))) {
+					$(settings.issuesDiv).stop();
+					$(settings.datesDiv+' li:last-child a').click();
+				} else {
+					if (!$(settings.issuesDiv).is(':animated')) {
+						$(settings.issuesDiv).animate({'marginTop':currentPositionIssues-heightIssue},{queue:false, duration:settings.issuesSpeed});
+						$(settings.issuesDiv+' li').animate({'opacity':settings.issuesTransparency},{queue:false, duration:settings.issuesSpeed});
+						$(settings.issuesDiv+' li.'+settings.issuesSelectedClass).removeClass(settings.issuesSelectedClass).next().fadeTo(settings.issuesTransparencySpeed, 1).addClass(settings.issuesSelectedClass);
+						$(settings.datesDiv).animate({'marginTop':currentIssueDate},{queue:false, duration:'settings.datesSpeed'});
+						$(settings.datesDiv+' a.'+settings.datesSelectedClass).removeClass(settings.datesSelectedClass).parent().next().children().addClass(settings.datesSelectedClass);
+					}
+				}
+			}
+		});
+
+		$(settings.prevButton).click(function(event){
+			event.preventDefault();
+			if(settings.orientation == 'horizontal') {
+				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginLeft').substring(0,$(settings.issuesDiv).css('marginLeft').indexOf('px')));
+				var currentIssueIndex = currentPositionIssues/widthIssue;
+				var currentPositionDates = parseInt($(settings.datesDiv).css('marginLeft').substring(0,$(settings.datesDiv).css('marginLeft').indexOf('px')));
+				var currentIssueDate = currentPositionDates+widthDate;
+				if(currentPositionIssues >= 0) {
+					$(settings.issuesDiv).stop();
+					$(settings.datesDiv+' li:first-child a').click();
+				} else {
+					if (!$(settings.issuesDiv).is(':animated')) {
+						$(settings.issuesDiv).animate({'marginLeft':currentPositionIssues+widthIssue},{queue:false, duration:settings.issuesSpeed});
+						$(settings.issuesDiv+' li').animate({'opacity':settings.issuesTransparency},{queue:false, duration:settings.issuesSpeed});
+						$(settings.issuesDiv+' li.'+settings.issuesSelectedClass).removeClass(settings.issuesSelectedClass).prev().fadeTo(settings.issuesTransparencySpeed, 1).addClass(settings.issuesSelectedClass);
+						$(settings.datesDiv).animate({'marginLeft':currentIssueDate},{queue:false, duration:'settings.datesSpeed'});
+						$(settings.datesDiv+' a.'+settings.datesSelectedClass).removeClass(settings.datesSelectedClass).parent().prev().children().addClass(settings.datesSelectedClass);
+					}
+				}
+			} else if(settings.orientation == 'vertical') {
+				var currentPositionIssues = parseInt($(settings.issuesDiv).css('marginTop').substring(0,$(settings.issuesDiv).css('marginTop').indexOf('px')));
+				var currentIssueIndex = currentPositionIssues/heightIssue;
+				var currentPositionDates = parseInt($(settings.datesDiv).css('marginTop').substring(0,$(settings.datesDiv).css('marginTop').indexOf('px')));
+				var currentIssueDate = currentPositionDates+heightDate;
+				if(currentPositionIssues >= 0) {
+					$(settings.issuesDiv).stop();
+					$(settings.datesDiv+' li:first-child a').click();
+				} else {
+					if (!$(settings.issuesDiv).is(':animated')) {
+						$(settings.issuesDiv).animate({'marginTop':currentPositionIssues+heightIssue},{queue:false, duration:settings.issuesSpeed});
+						$(settings.issuesDiv+' li').animate({'opacity':settings.issuesTransparency},{queue:false, duration:settings.issuesSpeed});
+						$(settings.issuesDiv+' li.'+settings.issuesSelectedClass).removeClass(settings.issuesSelectedClass).prev().fadeTo(settings.issuesTransparencySpeed, 1).addClass(settings.issuesSelectedClass);
+						$(settings.datesDiv).animate({'marginTop':currentIssueDate},{queue:false, duration:'settings.datesSpeed'},{queue:false, duration:settings.issuesSpeed});
+						$(settings.datesDiv+' a.'+settings.datesSelectedClass).removeClass(settings.datesSelectedClass).parent().prev().children().addClass(settings.datesSelectedClass);
+					}
+				}
+			}
+		});
+		
+		// keyboard navigation, added since 0.9.1
+		if(settings.arrowKeys=='true') {
+			if(settings.orientation=='horizontal') {
+				$(document).keydown(function(event){
+					if (event.keyCode == 39) { 
+				       $(settings.nextButton).click();
+				    }
+					if (event.keyCode == 37) { 
+				       $(settings.prevButton).click();
+				    }
+				});
+			} else if(settings.orientation=='vertical') {
+				$(document).keydown(function(event){
+					if (event.keyCode == 40) { 
+				       $(settings.nextButton).click();
+				    }
+					if (event.keyCode == 38) { 
+				       $(settings.prevButton).click();
+				    }
+				});
+			}
+		}
+		
+		// default position startAt, added since 0.9.3
+		$(settings.datesDiv+' li').eq(settings.startAt-1).find('a').trigger('click');
+		
+		// autoPlay, added since 0.9.4
+		if(settings.autoPlay == 'true') { 
+			setInterval("autoPlay()", settings.autoPlayPause);
+		}
+	});
 };
-new NTEStimeline().init(0);
+})(jQuery);
+
+
