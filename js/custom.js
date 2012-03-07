@@ -125,8 +125,15 @@ jQuery(document).ready(function () {
       $li.addClass('active');
     }
   });
-  
- 
+
+  /* History
+   ------------------------------------------------------------------------*/
+
+  jQuery('#timeline').timelinr({
+     autoPlay: 'false',
+     issuesTransparency: 1
+  });
+
   /* Helper Functions
    ------------------------------------------------------------------------*/
    
@@ -162,6 +169,6 @@ jQuery(document).ready(function () {
     textShadow: '#EEE 1px 1px;',
     color: '-linear-gradient(#333, #555)'
   });
-  
+ 
 /* End custom scripts */
 });
