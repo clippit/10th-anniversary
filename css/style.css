@@ -1293,47 +1293,6 @@ a:hover.download-link {
   border-bottom:1px solid #999;
 }
 
-
-/* Services
- ------------------------------------------------------------------------*/
-.services {
-  padding-top:48px;
-} 
-
-.services-list h4 a {
-  text-decoration:none;
-  float:left;
-  padding:12px 0 0 0;
-}
-.services-list h4 { 
-    margin-bottom:10px;
-  overflow:hidden;
-  width:288px;
-}
-.services-list h4 img {
-  float:left;
-  margin-right:10px;
-}
-.services-list {
-  padding-bottom:12px;
-  width:288px;
-}
-.services-list li {
-  border:none;
-  background:none;
-  padding:2px 0;
-}
-.services-list ul {
-  list-style-type:circle;
-  margin-left:20px;
-  list-style-position:outside;
-}
-.services-list p {
-  color:#444;
-  margin: 6px 0 12px 0;
-  text-shadow:0 1px 0 #eee;
-}
-
 /* Achivements
  ------------------------------------------------------------------------*/
  
@@ -1464,12 +1423,13 @@ a:hover.download-link {
   font-weight: bold;
   margin-left: 200px;
   color: #9B3A2D;
-  font-size: 4em;
+  font-size: 3em;
   text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 2px;
 }
 
 #issues>li ul li{
-  font-size:1.2em;
+  font-size:1.3em;
+  margin-bottom: 0.3em;
   text-shadow: 0 1px 0 #EEE;
 }
 
