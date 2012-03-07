@@ -225,6 +225,10 @@ jQuery(document).ready(function () {
     }
   });
   
+  jQuery('#timeline').timelinr({
+     autoPlay: 'false',
+     issuesTransparency: 1
+  });
   
   /* About
    ------------------------------------------------------------------------*/

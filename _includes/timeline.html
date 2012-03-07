@@ -61,26 +61,28 @@ history:
 ---
 
 <div id="timeline">
-   <i id="timeline-pointer"></i>
-    <div id="line"></div>
-   <ul id="timeline-handler">  
-    
-     {% for one_year in page.history %}
-     <li><span>{{  one_year.year  }}</span><b></b></li>
-     {% endfor %}
-   </ul>
-   <div id="timeline-container">
+  <ul id="dates">
     {% for one_year in page.history %}
-     <div>
-        <h3>{{  one_year.year  }} 年</h3>
-        <ul class="bullet-list-orange">
-          {% for story in one_year.content %}
-          <li>{{  story  }}</li>
-          {% endfor %}
-        </ul>
-     </div>
-     {% endfor %}
-   </div>
-   <!-- timeline container -->    
-</div>
+    <li><a href="#{{  one_year.year  }}">{{  one_year.year  }}</a></li>
+    {% endfor %}
+  </ul>
+  <!-- issues -->
+  <ul id="issues">
+    {% for one_year in page.history %}
+    <li id="one_year.year">
+      <h3>{{  one_year.year  }} 年</h3>
+      <ul class="bullet-list-orange">
+        {% for story in one_year.content %}
+        <li>{{  story  }}</li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
+  <!-- /issues -->
+  <div id="grad_left"></div>
+  <div id="grad_right"></div>
+  <a href="#" id="next">+</a>
+  <a href="#" id="prev">-</a>
+</div>  
 <!-- /timeline -->
