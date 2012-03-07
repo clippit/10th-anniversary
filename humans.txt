@@ -19,6 +19,7 @@ team:
 
 /* THANKS */
   jQuery One Page Navigation Plugin: http://trevordavis.net/blog/jquery-one-page-navigation-plugin
+  jQuery Timelinr: http://www.csslab.cl/2011/08/18/jquery-timelinr/
   Markdown-CSS: https://github.com/clownfart/Markdown-CSS
   Hypax - One Page Portfolio: http://rascals.eu/
   Lovely website icons pack 2: http://artdesigner.lv/archives/282
@@ -28,5 +29,5 @@ team:
   Components: HTML5 Boilerplate, Modernizr, jQuery, cufón
   Software: Sublime Text 2, jekyll, git, Photoshop
   Language: Simplified Chinese
-  Last update: {{ site.time }}
-  GitHub: https://github.com/clippit/10th-anniversary
+  Generated Time: {{ site.time }}
+  GitHub Page: https://github.com/clippit/10th-anniversary
