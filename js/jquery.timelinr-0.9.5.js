@@ -9,9 +9,9 @@ http://www.opensource.org/licenses/mit-license.php
 instructions: http://www.csslab.cl/2011/08/18/jquery-timelinr/
 ---------------------------------- */
 (function ($) {
-jQuery.fn.timelinr = function(options){
+$.fn.timelinr = function(options){
   // default plugin settings
-  settings = jQuery.extend({
+  var settings = $.extend({
     orientation:              'horizontal',   // value: horizontal | vertical, default to horizontal
     containerDiv:             '#timeline',    // value: any HTML tag or #id, default to #timeline
     datesDiv:                 '#dates',     // value: any HTML tag or #id, default to #dates
@@ -191,28 +191,6 @@ jQuery.fn.timelinr = function(options){
     // default position startAt, added since 0.9.3
     $(settings.datesDiv+' li').eq(settings.startAt-1).find('a').trigger('click');
     
-    // autoPlay, added since 0.9.4
-    if(settings.autoPlay == 'true') {
-      setInterval("autoPlay()", settings.autoPlayPause);
-    }
   });
 };
-
-// autoPlay, added since 0.9.4
-function autoPlay(){
-  var currentDate = $(settings.datesDiv).find('a.'+settings.datesSelectedClass);
-  if(settings.autoPlayDirection == 'forward') {
-    if(currentDate.parent().is('li:last-child')) {
-      $(settings.datesDiv+' li:first-child').find('a').trigger('click');
-    } else {
-      currentDate.parent().next().find('a').trigger('click');
-    }
-  } else if(settings.autoPlayDirection == 'backward') {
-    if(currentDate.parent().is('li:first-child')) {
-      $(settings.datesDiv+' li:last-child').find('a').trigger('click');
-    } else {
-      currentDate.parent().prev().find('a').trigger('click');
-    }
-  }
-}
 })(jQuery);
