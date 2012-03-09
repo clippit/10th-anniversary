@@ -21,8 +21,7 @@ exclude:
  - jquery.masonry.min.js
  - jquery.tipsy.js
  - RSlider.js
- - PTSansNarrow_400.js
- - msyh.font.js
  - logo.psd
  - view-projects-btn.psd
  - register.psd
+ - fonts
