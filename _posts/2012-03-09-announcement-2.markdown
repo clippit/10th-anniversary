@@ -4,6 +4,7 @@ category: announcement
 thumb: assets/latest-works02.jpg
 thumb_title: 4月15日院友院庆安排
 title: 南京大学软件学院4月15日院友院庆安排
+custom_css: "td { vertical-align: middle; }"
 ---
 
 # 4月15日院友院庆安排
@@ -31,7 +32,7 @@ title: 南京大学软件学院4月15日院友院庆安排
 	</tr>
 	<tr>
 		<td rowspan="8">14:00-16:30</td>
-		<td rowspan="8">院友自由交流</td>\
+		<td rowspan="8">院友自由交流</td>
 		<td>2002级研究生、2000级本科生、2002级双学位</td>
 		<td>费彝民楼B区701</td>
 	</tr>
