@@ -616,7 +616,7 @@ ul#menu li a:hover, ul#menu li.current a{
 /*  text-shadow:0 1px 1px #999;*/
 }
 ul#menu li:hover, ul#menu li.current {
-  background:transparent url(../images/opacity15.png) left top repeat;
+  background:transparent url(../images/menuhover.png) left top repeat;
 }
  
  
@@ -741,7 +741,7 @@ ul#menu li:hover, ul#menu li.current {
   margin:16px;
   right:0;
   bottom:0;
-  border-top:4px solid #111;
+  border-top:4px solid #142442;
   padding:18px;
   width:300px;
   background:transparent url(../images/opacity70.png) left top repeat;
