@@ -272,6 +272,11 @@ code, pre {
 .text ol ol, .text ul ol { margin-left: 20px; }
 .text ul ol, ol ul, .text ol ol, .text ul ul { margin-bottom: 0; }
 
+.text li, .text p {
+  font-size: 1.3em;
+  margin-bottom: 0.3em;
+  text-shadow: 0 1px 0 #eee;
+}
 /* Table */
 .text table {
   width: 100%;

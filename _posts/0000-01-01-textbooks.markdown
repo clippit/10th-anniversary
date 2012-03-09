@@ -12,9 +12,9 @@ title: 教材建设
   <tr>
     <th>教材名称</th>
     <th>作者</th>
-    <th>出版社</th>
-    <th>出版时间</th>
-    <th>入选规划或获奖情况</th>
+    <th style="width:6em;">出版社</th>
+    <th style="width:2em;">时间</th>
+    <th>获奖情况</th>
   </tr>
   <tr>
     <td>《操作系统教程》第4版</td>
