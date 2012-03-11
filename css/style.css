@@ -881,7 +881,7 @@ a:hover#view-projects-btn { background:transparent url(../images/view-projects-b
 
 #news-bubbles li.odd:before {
   border-color:transparent #cd7625 #cd7625 transparent;
-  left:47px; /* controls horizontal position */
+  left:47px;
 }
 
 #news-bubbles li.odd:after {
@@ -890,13 +890,29 @@ a:hover#view-projects-btn { background:transparent url(../images/view-projects-b
 
 #news-bubbles li.even:before {
   border-color:transparent #cd2528 #cd2528 transparent;
-  right:47px; /* controls horizontal position */
+  right:47px;
 }
 
 #news-bubbles li.even:after {
   right:46px;
 }
 
+.lt-ie9 #news-bubbles li:before {
+  border-width: 20px 20px 0;
+  width:0;
+  height:0;
+  bottom:-20px;
+}
+
+.lt-ie9 #news-bubbles li.odd:before {
+  border-color: #cd7625 transparent;
+  left:41px;
+}
+
+.lt-ie9 #news-bubbles li.even:before {
+  border-color: #cd2528 transparent;
+  right:41px;
+}
 
 
 /* Downloads
