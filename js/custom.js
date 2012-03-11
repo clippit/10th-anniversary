@@ -156,19 +156,20 @@ jQuery(document).ready(function () {
   
   /* Cufon Fonts
    ------------------------------------------------------------------------*/
-  //Cufon.replace('h1, h2, h3, h4, h5, h6, #menu > li > a', {fontFamily: 'PT Sans Narrow', hover: 'true', textShadow: '#222 1px 1px'});
-  Cufon.replace('#menu > li > a', {
-    fontFamily: "FZLanTingHeiS-H-GB",
-    hover: true,
-    separate: 'characters',
-    textShadow: '#111 0 1px'
-  });
-  Cufon.replace('.section-header > h2', {
-    fontFamily: "FZLanTingHeiS-H-GB",
-    separate: 'characters',
-    textShadow: '#EEE 1px 1px;',
-    color: '-linear-gradient(#333, #555)'
-  });
- 
+  if (Modernizr.canvas) {
+    Cufon.replace('#menu > li > a', {
+      fontFamily: "FZLanTingHeiS-H-GB",
+      hover: true,
+      separate: 'characters',
+      textShadow: '#111 0 1px'
+    });
+    Cufon.replace('.section-header > h2', {
+      fontFamily: "FZLanTingHeiS-H-GB",
+      separate: 'characters',
+      textShadow: '#EEE 1px 1px;',
+      color: '-linear-gradient(#333, #555)'
+    });
+  }
+
 /* End custom scripts */
 });
