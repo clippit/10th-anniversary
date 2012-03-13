@@ -64,11 +64,7 @@ slider:
   </script>
 </head>
 <body>
-  <p id="ie6-message">您的浏览器禁用了Javascript，启用后方能获得最佳浏览体验。</p>
-  <script type="text/javascript">(function(){
-    var nojs = document.getElementById("ie6-message");
-    nojs.parentNode.removeChild(nojs);
-  })();</script>
+  <noscript><p id="ie6-message">您的浏览器禁用了Javascript，启用后方能获得最佳浏览体验。</p></noscript>
   <!-- Prompt IE 6 users to install Chrome Frame. -->
   <!--[if lt IE 7]><p class="chromeframe" id="ie6-message">您的浏览器 <em>太古老了！</em> <a href="http://browsehappy.com/">升级成更好的浏览器</a> 或者 <a href="http://www.google.com/chromeframe/?redirect=true">安装 Google Chrome Frame</a> 以获得更好的效果。</p><![endif]-->
   <!-- header -->
