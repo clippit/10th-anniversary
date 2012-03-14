@@ -158,13 +158,13 @@ jQuery(document).ready(function () {
    ------------------------------------------------------------------------*/
   if (Modernizr.canvas) {
     Cufon.replace('#menu > li > a', {
-      fontFamily: "FZLanTingHeiS-H-GB",
+      fontFamily: "Hiragino Sans GB W6",
       hover: true,
       separate: 'characters',
       textShadow: '#111 0 1px'
     });
     Cufon.replace('.section-header > h2', {
-      fontFamily: "FZLanTingHeiS-H-GB",
+      fontFamily: "Hiragino Sans GB W6",
       separate: 'characters',
       textShadow: '#EEE 1px 1px;',
       color: '-linear-gradient(#333, #555)'
