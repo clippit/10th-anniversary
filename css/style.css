@@ -589,11 +589,12 @@ ul.bullet-list-blue li { background: transparent url(../images/icon-bullet-blue.
  ------------------------------------------------------------------------*/
 #main-menu {
   float:right;
-/*  margin-right:24px;*/
+  height:80px;
+  overflow: hidden;
 }
 ul#menu {
   display:inline;
-  height:88px;
+  height:80px;
 }
 ul#menu li {
   position: relative;
@@ -603,8 +604,7 @@ ul#menu li {
 ul#menu li a {
   display:block;
   height: 100%;
-  margin-top:30px;
-  padding:0 18px 34px 18px;
+  padding:33px 18px 31px 18px;
   text-align: left;
   line-height: 16px;
   font-size: 16px;
