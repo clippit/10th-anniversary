@@ -76,7 +76,7 @@ img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
-.no-js {clear: both;}
+.no-js {display: block; clear: both;}
 
 @media only screen and (min-width: 480px) {
 body{font-size:14px;}
