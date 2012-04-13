@@ -64,6 +64,11 @@ custom_css: "td { vertical-align: middle; }"
 		<td>2006级本科生、2007级本科生</td>
 		<td>费彝民楼A区318</td>
 	</tr>
+	<tr>
+		<td>14:00-16:30</td>
+		<td colspan="2">部分院友参观浦口校区</td>
+		<td>14:00 鼓楼费彝民楼北门上车前往, 16:30 浦口校区门口上车返回</td>
+	</tr>
 </table>
 
 注：
